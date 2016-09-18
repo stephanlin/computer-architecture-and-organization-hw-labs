@@ -1,0 +1,66 @@
+----------Full Adder----------
+LIBRARY IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity full_adder is 
+  port(a, b, cin : in std_logic;
+        sum, cout : out std_logic);
+end full_adder;
+architecture func of full_adder is
+begin
+  sum <= (a xor b) xor cin;
+  cout <= (a and (b or cin)) or (cin and b);
+end func;
+
+
+----------XOR gate----------
+LIBRARY IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity xor_gate is
+  port(a, b: in std_logic;
+ 
+        F : out std_logic);
+end xor_gate;
+architecture func of xor_gate is 
+begin
+  F <= a xor b;
+end func;
+
+
+----------2 bit adder subtractor----------
+LIBRARY IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity bit2_add_sub is 
+  port ( E              : in std_logic;
+         A1, A0         : in std_logic;
+         B1, B0         : in std_logic;
+         S1, S0         : out std_logic;
+         cout, overflow : out std_logic);
+end bit2_add_sub;
+architecture struct of bit2_add_sub is 
+
+component xor_gate is 
+  port(a, b : in std_logic;
+             F : out std_logic);
+end component;
+  
+component full_adder is 
+  port(a, b, cin : in std_logic;
+            sum, cout : out std_logic);
+end component;
+  
+signal C1, C2 : std_logic;
+signal xor0, xor1 : std_logic;
+
+begin
+  XG0: xor_gate port map(E, B0, xor0);
+  XG1: xor_gate port map(E, B1, xor1);
+  
+  FA0: full_adder port map(A0, xor0, E, S0, C1);
+  FA1: full_adder port map(A1, xor1, C1, S1, C2);
+  
+  
+  cout <= C2;
+end struct;

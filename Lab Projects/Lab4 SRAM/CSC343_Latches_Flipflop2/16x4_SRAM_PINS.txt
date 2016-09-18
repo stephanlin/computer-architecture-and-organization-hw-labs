@@ -1,0 +1,30 @@
+to, location
+In[0], PIN_N25
+In[1], PIN_N26
+In[2], PIN_P25
+In[3], PIN_AE14
+
+
+oct[0], PIN_AF14
+oct[1], PIN_AD13
+oct[2], PIN_AC13
+oct[3], PIN_C13
+
+WEn, PIN_V2
+
+segment_a, PIN_AF10
+segment_b, PIN_AB12
+segment_c, PIN_AC12
+segment_d, PIN_AD11
+segment_e, PIN_AE11
+segment_f, PIN_V14
+segment_g, PIN_V13
+
+
+segment_a1,  PIN_R2
+segment_b1,  PIN_P4
+segment_c1,  PIN_P3
+segment_d1,  PIN_M2
+segment_e1,  PIN_M3
+segment_f1,  PIN_M5
+segment_g1,  PIN_M4

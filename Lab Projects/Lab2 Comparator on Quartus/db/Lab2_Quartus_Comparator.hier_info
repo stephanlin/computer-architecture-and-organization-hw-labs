@@ -1,0 +1,85 @@
+|8bit_comparator
+output <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+a[0] => 1bit_comparator:inst.input_a
+a[1] => 1bit_comparator:inst11.input_a
+a[2] => 1bit_comparator:inst12.input_a
+a[3] => 1bit_comparator:inst13.input_a
+a[4] => 1bit_comparator:inst14.input_a
+a[5] => 1bit_comparator:inst15.input_a
+a[6] => 1bit_comparator:inst16.input_a
+a[7] => 1bit_comparator:inst17.input_a
+b[0] => 1bit_comparator:inst.input_b
+b[1] => 1bit_comparator:inst11.input_b
+b[2] => 1bit_comparator:inst12.input_b
+b[3] => 1bit_comparator:inst13.input_b
+b[4] => 1bit_comparator:inst14.input_b
+b[5] => 1bit_comparator:inst15.input_b
+b[6] => ~NO_FANOUT~
+b[7] => 1bit_comparator:inst16.input_b
+b[7] => 1bit_comparator:inst17.input_b
+
+
+|8bit_comparator|1bit_comparator:inst
+output <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+input_a => inst5.IN0
+input_a => inst.IN0
+input_b => inst5.IN1
+input_b => inst4.IN0
+
+
+|8bit_comparator|1bit_comparator:inst12
+output <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+input_a => inst5.IN0
+input_a => inst.IN0
+input_b => inst5.IN1
+input_b => inst4.IN0
+
+
+|8bit_comparator|1bit_comparator:inst11
+output <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+input_a => inst5.IN0
+input_a => inst.IN0
+input_b => inst5.IN1
+input_b => inst4.IN0
+
+
+|8bit_comparator|1bit_comparator:inst13
+output <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+input_a => inst5.IN0
+input_a => inst.IN0
+input_b => inst5.IN1
+input_b => inst4.IN0
+
+
+|8bit_comparator|1bit_comparator:inst16
+output <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+input_a => inst5.IN0
+input_a => inst.IN0
+input_b => inst5.IN1
+input_b => inst4.IN0
+
+
+|8bit_comparator|1bit_comparator:inst15
+output <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+input_a => inst5.IN0
+input_a => inst.IN0
+input_b => inst5.IN1
+input_b => inst4.IN0
+
+
+|8bit_comparator|1bit_comparator:inst17
+output <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+input_a => inst5.IN0
+input_a => inst.IN0
+input_b => inst5.IN1
+input_b => inst4.IN0
+
+
+|8bit_comparator|1bit_comparator:inst14
+output <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+input_a => inst5.IN0
+input_a => inst.IN0
+input_b => inst5.IN1
+input_b => inst4.IN0
+
+

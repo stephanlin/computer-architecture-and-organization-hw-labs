@@ -1,0 +1,153 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2010 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+# Date created = 05:59:45  March 06, 2015
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Lab3_Quartus_16AddSub_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C35F672C6
+set_global_assignment -name TOP_LEVEL_ENTITY addsub16_7segment
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "05:59:45  MARCH 06, 2015"
+set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name VHDL_FILE add16.vhdl
+set_global_assignment -name LL_ROOT_REGION ON -entity Lab3_Quartus_16AddSub -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity Lab3_Quartus_16AddSub -section_id "Root Region"
+set_global_assignment -name VECTOR_WAVEFORM_FILE add16WAVE.vwf
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_location_assignment PIN_N25 -to a[0]
+set_location_assignment PIN_N26 -to a[1]
+set_location_assignment PIN_P25 -to a[2]
+set_location_assignment PIN_AE14 -to a[3]
+set_location_assignment PIN_AF14 -to a[4]
+set_location_assignment PIN_AD13 -to a[5]
+set_location_assignment PIN_AC13 -to a[6]
+set_location_assignment PIN_C13 -to a[7]
+set_location_assignment PIN_C13 -to a[8]
+set_location_assignment PIN_C13 -to a[9]
+set_location_assignment PIN_C13 -to a[10]
+set_location_assignment PIN_C13 -to a[11]
+set_location_assignment PIN_C13 -to a[12]
+set_location_assignment PIN_C13 -to a[13]
+set_location_assignment PIN_C13 -to a[14]
+set_location_assignment PIN_C13 -to a[15]
+set_location_assignment PIN_B13 -to b[0]
+set_location_assignment PIN_A13 -to b[1]
+set_location_assignment PIN_N1 -to b[2]
+set_location_assignment PIN_P1 -to b[3]
+set_location_assignment PIN_P2 -to b[4]
+set_location_assignment PIN_T7 -to b[5]
+set_location_assignment PIN_U3 -to b[6]
+set_location_assignment PIN_U4 -to b[7]
+set_location_assignment PIN_U4 -to b[8]
+set_location_assignment PIN_U4 -to b[9]
+set_location_assignment PIN_U4 -to b[10]
+set_location_assignment PIN_U4 -to b[11]
+set_location_assignment PIN_U4 -to b[12]
+set_location_assignment PIN_U4 -to b[13]
+set_location_assignment PIN_U4 -to b[14]
+set_location_assignment PIN_U4 -to b[15]
+set_location_assignment PIN_V2 -to cin
+set_location_assignment PIN_AD12 -to cout
+set_location_assignment PIN_AE23 -to overflow
+set_global_assignment -name BDF_FILE addsub16_7segment.bdf
+set_global_assignment -name VHDL_FILE Dec_7seg.vhd
+set_location_assignment PIN_AF10 -to seg_a[0]
+set_location_assignment PIN_AB12 -to seg_b[0]
+set_location_assignment PIN_AC12 -to seg_c[0]
+set_location_assignment PIN_AD11 -to seg_d[0]
+set_location_assignment PIN_AE11 -to seg_e[0]
+set_location_assignment PIN_V14 -to seg_f[0]
+set_location_assignment PIN_V13 -to seg_g[0]
+set_location_assignment PIN_V20 -to seg_a[1]
+set_location_assignment PIN_V21 -to seg_b[1]
+set_location_assignment PIN_W21 -to seg_c[1]
+set_location_assignment PIN_Y22 -to seg_d[1]
+set_location_assignment PIN_AA24 -to seg_e[1]
+set_location_assignment PIN_AA23 -to seg_f[1]
+set_location_assignment PIN_AB24 -to seg_g[1]
+set_location_assignment PIN_AB23 -to seg_a[2]
+set_location_assignment PIN_V22 -to seg_b[2]
+set_location_assignment PIN_AC25 -to seg_c[2]
+set_location_assignment PIN_AC26 -to seg_d[2]
+set_location_assignment PIN_AB26 -to seg_e[2]
+set_location_assignment PIN_AB25 -to seg_f[2]
+set_location_assignment PIN_Y24 -to seg_g[2]
+set_location_assignment PIN_Y23 -to seg_a[3]
+set_location_assignment PIN_AA25 -to seg_b[3]
+set_location_assignment PIN_AA26 -to seg_c[3]
+set_location_assignment PIN_Y26 -to seg_d[3]
+set_location_assignment PIN_Y25 -to seg_e[3]
+set_location_assignment PIN_U22 -to seg_f[3]
+set_location_assignment PIN_W24 -to seg_g[3]
+set_global_assignment -name VHDL_FILE sign_extention.vhd
+set_location_assignment PIN_U9 -to seg_a[4]
+set_location_assignment PIN_U1 -to seg_b[4]
+set_location_assignment PIN_U2 -to seg_c[4]
+set_location_assignment PIN_T4 -to seg_d[4]
+set_location_assignment PIN_R7 -to seg_e[4]
+set_location_assignment PIN_R6 -to seg_f[4]
+set_location_assignment PIN_T3 -to seg_g[4]
+set_location_assignment PIN_T2 -to seg_a[5]
+set_location_assignment PIN_P6 -to seg_b[5]
+set_location_assignment PIN_P7 -to seg_c[5]
+set_location_assignment PIN_T9 -to seg_d[5]
+set_location_assignment PIN_R5 -to seg_e[5]
+set_location_assignment PIN_R4 -to seg_f[5]
+set_location_assignment PIN_R3 -to seg_g[5]
+set_location_assignment PIN_R2 -to seg_a[6]
+set_location_assignment PIN_P4 -to seg_b[6]
+set_location_assignment PIN_P3 -to seg_c[6]
+set_location_assignment PIN_M2 -to seg_d[6]
+set_location_assignment PIN_M3 -to seg_e[6]
+set_location_assignment PIN_M5 -to seg_f[6]
+set_location_assignment PIN_M4 -to seg_g[6]
+set_location_assignment PIN_L3 -to seg_a[7]
+set_location_assignment PIN_L2 -to seg_b[7]
+set_location_assignment PIN_L9 -to seg_c[7]
+set_location_assignment PIN_L6 -to seg_d[7]
+set_location_assignment PIN_L7 -to seg_e[7]
+set_location_assignment PIN_P9 -to seg_f[7]
+set_location_assignment PIN_N9 -to seg_g[7]
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name VECTOR_WAVEFORM_FILE finalWave.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE finalWave.vwf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

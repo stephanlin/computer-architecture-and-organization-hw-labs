@@ -1,0 +1,194 @@
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+11
+1000
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+equal
+# storage
+db|Lab2_Quartus_Comparator.(0).cnf
+db|Lab2_Quartus_Comparator.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+equal.vhd
+f5faf16b51ce5b69e5a444bbcc4d87
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+1bit_comparator
+# storage
+db|Lab2_Quartus_Comparator.(1).cnf
+db|Lab2_Quartus_Comparator.(1).cnf
+# case_insensitive
+# source_file
+1bit_comparator.bdf
+35e9acbec35c924ffe6921425dcd3fb
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+1bit_comparator:inst
+1bit_comparator:inst12
+1bit_comparator:inst11
+1bit_comparator:inst13
+1bit_comparator:inst16
+1bit_comparator:inst15
+1bit_comparator:inst17
+1bit_comparator:inst14
+}
+# macro_sequence
+
+# end
+# entity
+2bit_comparator
+# storage
+db|Lab2_Quartus_Comparator.(2).cnf
+db|Lab2_Quartus_Comparator.(2).cnf
+# case_insensitive
+# source_file
+2bit_comparator.bdf
+8aab76f344ee25796516e928c24557
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+2bit_comparator2
+# storage
+db|Lab2_Quartus_Comparator.(3).cnf
+db|Lab2_Quartus_Comparator.(3).cnf
+# case_insensitive
+# source_file
+2bit_comparator2.bdf
+32b9cc5f91956bafe9cfaf844b4b8294
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+8bit_comparator
+# storage
+db|Lab2_Quartus_Comparator.(4).cnf
+db|Lab2_Quartus_Comparator.(4).cnf
+# case_insensitive
+# source_file
+8bit_comparator.bdf
+b94e7d16baa65c55f8a485aefd6dc40
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+two_bit_equal
+# storage
+db|Lab2_Quartus_Comparator.(5).cnf
+db|Lab2_Quartus_Comparator.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+two_bit_equal.vhd
+6aa361e1bb1a5c2855fb1a69f13312
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+two_bit_equal_port
+# storage
+db|Lab2_Quartus_Comparator.(6).cnf
+db|Lab2_Quartus_Comparator.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+two_bit_equal_port.vhd
+46c31c5b73ec627686a119bb659aff9d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# complete
+

@@ -1,0 +1,244 @@
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+11
+1000
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+add16
+# storage
+db|Lab3_Quartus_16AddSub.(1).cnf
+db|Lab3_Quartus_16AddSub.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+add16.vhdl
+7e57cb48186725634924b5a7dbf270a8
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+add16:inst
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+add2
+# storage
+db|Lab3_Quartus_16AddSub.(2).cnf
+db|Lab3_Quartus_16AddSub.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+add16.vhdl
+7e57cb48186725634924b5a7dbf270a8
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(a)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(b)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(ans)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+add16:inst|add2:b_adder0
+add16:inst|add2:b_adder1
+add16:inst|add2:b_adder2
+add16:inst|add2:b_adder3
+add16:inst|add2:b_adder4
+add16:inst|add2:b_adder5
+add16:inst|add2:b_adder6
+add16:inst|add2:b_adder7
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+BIT_ADDER
+# storage
+db|Lab3_Quartus_16AddSub.(4).cnf
+db|Lab3_Quartus_16AddSub.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+add16.vhdl
+7e57cb48186725634924b5a7dbf270a8
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+add16:inst|add2:b_adder0|BIT_ADDER:b_adder0
+add16:inst|add2:b_adder0|BIT_ADDER:b_adder1
+add16:inst|add2:b_adder1|BIT_ADDER:b_adder0
+add16:inst|add2:b_adder1|BIT_ADDER:b_adder1
+add16:inst|add2:b_adder2|BIT_ADDER:b_adder0
+add16:inst|add2:b_adder2|BIT_ADDER:b_adder1
+add16:inst|add2:b_adder3|BIT_ADDER:b_adder0
+add16:inst|add2:b_adder3|BIT_ADDER:b_adder1
+add16:inst|add2:b_adder4|BIT_ADDER:b_adder0
+add16:inst|add2:b_adder4|BIT_ADDER:b_adder1
+add16:inst|add2:b_adder5|BIT_ADDER:b_adder0
+add16:inst|add2:b_adder5|BIT_ADDER:b_adder1
+add16:inst|add2:b_adder6|BIT_ADDER:b_adder0
+add16:inst|add2:b_adder6|BIT_ADDER:b_adder1
+add16:inst|add2:b_adder7|BIT_ADDER:b_adder0
+add16:inst|add2:b_adder7|BIT_ADDER:b_adder1
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Dec_7seg
+# storage
+db|Lab3_Quartus_16AddSub.(0).cnf
+db|Lab3_Quartus_16AddSub.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+dec_7seg.vhd
+f1a25cdce3e5da7298278e8c9eb8dd0
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+Dec_7seg:inst1
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+sign_extention
+# storage
+db|Lab3_Quartus_16AddSub.(3).cnf
+db|Lab3_Quartus_16AddSub.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+sign_extention.vhd
+5f72291cebeabd36c9a029cf15cc66
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+sign_extention:inst2
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+addsub16_7segment
+# storage
+db|Lab3_Quartus_16AddSub.(5).cnf
+db|Lab3_Quartus_16AddSub.(5).cnf
+# case_insensitive
+# source_file
+addsub16_7segment.bdf
+aa25558b8c9fbfbbdbdb9514384f9ee4
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

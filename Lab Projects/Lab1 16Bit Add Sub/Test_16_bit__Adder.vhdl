@@ -1,0 +1,93 @@
+LIBRARY IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Decare a testbench.  Notice that the testbench does not have any
+-- input or output ports.
+
+entity TEST_ADD16 is
+end TEST_ADD16;
+
+-- Describes the functionality of the tesbench.
+
+architecture TEST of TEST_ADD16 is 
+
+  component add16
+    port( a, b		: in   STD_LOGIC_VECTOR(15 downto 0);
+          cin   : in   STD_LOGIC;--_VECTOR(15 downto 0);
+          ans		 : out		STD_LOGIC_VECTOR(15 downto 0);
+          cout		: out 	STD_LOGIC;
+          overflow		: out	STD_LOGIC);
+  end component;
+
+  --for U1: add16 use entity WORK.add16(arch);
+  signal a, b		: STD_LOGIC_VECTOR(15 downto 0);
+  signal cin   : STD_LOGIC;--_VECTOR(15 downto 0);
+  signal ans		 : STD_LOGIC_VECTOR(15 downto 0);
+  signal cout		: STD_LOGIC;
+  signal overflow		: STD_LOGIC;
+  
+  begin
+  U1: add16 port map (a,b,cin,ans,cout,overflow);
+  
+    process
+    begin
+        -- pos + pos: no overflow
+      a <= "0001111111111111";
+      b <= "0000000000000001";
+      cin <= '0';
+      wait for 10 ns;
+      assert ( ans = "0010000000000000" )	report "Failed Case 1 - ans" severity error;
+      assert ( cout = '0' ) report "Failed Case 1 - cout" severity error;
+      assert ( overflow = '0' ) report "Failed Case 1 - overflow" severity error;
+      wait for 40 ns;
+        -- pos + pos: overflow
+      a <= "0111111111111111";
+      b <= "0000000000000001";
+      cin <= '0';
+      wait for 10 ns;
+      assert ( ans = "1000000000000000" )	report "Failed Case 2 - ans" severity error;
+      assert ( cout = '0' ) report "Failed Case 2 - cout" severity error;
+      assert ( overflow = '1' ) report "Failed Case 2 - overflow" severity error;
+      wait for 40 ns;
+      
+        -- pos - pos: no overflow
+      a <= "0111111111111111";
+      b <= "0000000000000101";
+      cin <= '1';
+      wait for 10 ns;
+      assert ( ans = "0111111111111010" )	report "Failed Case 3 - ans" severity error;
+      assert ( cout = '1' ) report "Failed Case 3 - cout" severity error;
+      assert ( overflow = '0' ) report "Failed Case 3 - overflow" severity error;
+      wait for 40 ns;
+      
+        -- neg + pos: no overflow
+      a <= "1111111111111111";
+      b <= "0000000000000001";
+      cin <= '0';
+      wait for 10 ns;
+      assert ( ans = "0000000000000000" )	report "Failed Case 4 - ans" severity error;
+      assert ( cout = '1' ) report "Failed Case 4 - cout" severity error;
+      assert ( overflow = '0' ) report "Failed Case 4 - overflow" severity error;
+      wait for 40 ns;
+      
+        -- neg + neg: no overflow
+      a <= "1111111111111111";
+      b <= "1111111111111111";
+      cin <= '0';
+      wait for 10 ns;
+      assert ( ans = "1111111111111110" )	report "Failed Case 5 - ans" severity error;
+      assert ( cout = '1' ) report "Failed Case 5 - cout" severity error;
+      assert ( overflow = '0' ) report "Failed Case 5 - overflow" severity error;
+      wait for 40 ns;
+      
+        -- neg - pos: overflow
+      a <= "1000000000000000";
+      b <= "0000000000000001";
+      cin <= '1';
+      wait for 10 ns;
+      assert ( ans = "0111111111111111" )	report "Failed Case 6 - ans" severity error;
+      assert ( cout = '1' ) report "Failed Case 6 - cout" severity error;
+      assert ( overflow = '1' ) report "Failed Case 6 - overflow" severity error;
+      wait for 40 ns;
+    end process;
+END TEST;

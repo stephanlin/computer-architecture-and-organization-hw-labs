@@ -1,0 +1,580 @@
+Quartus II
+Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+11
+1000
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+SRAM
+# storage
+db|CSC343_Latches_Flipflop.(0).cnf
+db|CSC343_Latches_Flipflop.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+sram.vhd
+8b69cbcef1fe1efb46597c43f42e03e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+SRAM:s16_s0
+SRAM:s16_s1
+SRAM:s16_s2
+SRAM:s16_s3
+SRAM:s16_s4
+SRAM:s16_s5
+SRAM:s16_s6
+SRAM:s16_s7
+SRAM:s16_s8
+SRAM:s16_s9
+SRAM:s16_s10
+SRAM:s16_s11
+SRAM:s16_s12
+SRAM:s16_s13
+SRAM:s16_s14
+SRAM:s16_s15
+}
+# lmf
+c:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Positive_Dff
+# storage
+db|CSC343_Latches_Flipflop.(1).cnf
+db|CSC343_Latches_Flipflop.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+positive_dff.vhd
+817e3c99e41f7a788fd9c742c5a7cc
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+SRAM:s16_s0|Positive_Dff:s0
+SRAM:s16_s1|Positive_Dff:s0
+SRAM:s16_s2|Positive_Dff:s0
+SRAM:s16_s3|Positive_Dff:s0
+SRAM:s16_s4|Positive_Dff:s0
+SRAM:s16_s5|Positive_Dff:s0
+SRAM:s16_s6|Positive_Dff:s0
+SRAM:s16_s7|Positive_Dff:s0
+SRAM:s16_s8|Positive_Dff:s0
+SRAM:s16_s9|Positive_Dff:s0
+SRAM:s16_s10|Positive_Dff:s0
+SRAM:s16_s11|Positive_Dff:s0
+SRAM:s16_s12|Positive_Dff:s0
+SRAM:s16_s13|Positive_Dff:s0
+SRAM:s16_s14|Positive_Dff:s0
+SRAM:s16_s15|Positive_Dff:s0
+}
+# lmf
+c:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+D_latch
+# storage
+db|CSC343_Latches_Flipflop.(2).cnf
+db|CSC343_Latches_Flipflop.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+d_latch.vhd
+90b97bb463f62d85a774204fd0d4
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+SRAM:s16_s0|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s0|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s1|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s1|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s2|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s2|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s3|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s3|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s4|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s4|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s5|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s5|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s6|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s6|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s7|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s7|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s8|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s8|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s9|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s9|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s10|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s10|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s11|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s11|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s12|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s12|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s13|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s13|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s14|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s14|Positive_Dff:s0|D_latch:p_dff1
+SRAM:s16_s15|Positive_Dff:s0|D_latch:p_dff0
+SRAM:s16_s15|Positive_Dff:s0|D_latch:p_dff1
+}
+# lmf
+c:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Dec_7seg
+# storage
+db|CSC343_Latches_Flipflop.(5).cnf
+db|CSC343_Latches_Flipflop.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+dec_7seg.vhd
+bae7a5182f94184e607a62169c4311
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+c:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+decode2to4
+# storage
+db|CSC343_Latches_Flipflop.(6).cnf
+db|CSC343_Latches_Flipflop.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+decode2to4.vhd
+7a3ff09ca8d9a99641fbdc59835e4645
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+c:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Dec_7seg_sel
+# storage
+db|CSC343_Latches_Flipflop.(7).cnf
+db|CSC343_Latches_Flipflop.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+dec_7seg_sel.vhd
+6d53384f4945c1ff2ece9f3d43a8646b
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+c:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+JK_Flip_Flop
+# storage
+db|CSC343_Latches_Flipflop.(8).cnf
+db|CSC343_Latches_Flipflop.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+jk_flip_flop.vhd
+dd8ad5b2876b9a4315b72c36499fe6
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+c:|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+decode4to16
+# storage
+db|CSC343_Latches_Flipflop.(9).cnf
+db|CSC343_Latches_Flipflop.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+decode4to16.vhd
+1f176c5ddfe479f4b8db43a12b2f6e0
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+SRAM16
+# storage
+db|CSC343_Latches_Flipflop.(3).cnf
+db|CSC343_Latches_Flipflop.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+sram16.vhd
+32b12d452754d272cb3ea4a8fde
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+4x16_SRAM
+# storage
+db|CSC343_Latches_Flipflop.(4).cnf
+db|CSC343_Latches_Flipflop.(4).cnf
+# case_insensitive
+# source_file
+4x16_sram.bdf
+613ad17a6bf661e615a39fea17eda463
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+SRAM4
+# storage
+db|CSC343_Latches_Flipflop.(10).cnf
+db|CSC343_Latches_Flipflop.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+sram4.vhd
+e7c8acff5f31c2643c4d33fe7abb225b
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+dec_7seg_HEX
+# storage
+db|CSC343_Latches_Flipflop.(11).cnf
+db|CSC343_Latches_Flipflop.(11).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+dec_7seg_hex.vhd
+b75a47981429d62fd18f7f1841650
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+16x4_SRAM
+# storage
+db|CSC343_Latches_Flipflop.(12).cnf
+db|CSC343_Latches_Flipflop.(12).cnf
+# case_insensitive
+# source_file
+16x4_sram.bdf
+fcffdac2eb9b376abbe99eba93ed8d7
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+SR_latch
+# storage
+db|CSC343_Latches_Flipflop.(13).cnf
+db|CSC343_Latches_Flipflop.(13).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+sr_latch.vhd
+409e79c486ddf9c636321992f41e88f
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Gated_SR_latch
+# storage
+db|CSC343_Latches_Flipflop.(14).cnf
+db|CSC343_Latches_Flipflop.(14).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+gated_sr_latch.vhd
+fe7b467561af43c93e66395f6b3ed27
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+Master_Slave_Dff
+# storage
+db|CSC343_Latches_Flipflop.(15).cnf
+db|CSC343_Latches_Flipflop.(15).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+master_slave_dff.vhd
+2470648fa3415b933eba79eb557e157
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+T_Flip_Flop
+# storage
+db|CSC343_Latches_Flipflop.(16).cnf
+db|CSC343_Latches_Flipflop.(16).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+t_flip_flop.vhd
+adea9ece3c3029b434b3734d2bcf
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# lmf
+|altera|91sp2|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# complete
+

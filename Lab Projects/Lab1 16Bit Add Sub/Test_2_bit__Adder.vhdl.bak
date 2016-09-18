@@ -1,0 +1,53 @@
+LIBRARY IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Decare a testbench.  Notice that the testbench does not have any
+-- input or output ports.
+
+entity TEST_ADD2 is
+end TEST_ADD2;
+
+-- Describes the functionality of the tesbench.
+
+architecture TEST of TEST_ADD2 is 
+
+	component add2
+		port( a, b		: in   STD_LOGIC_VECTOR(1 downto 0);
+		      cin   : in   STD_LOGIC;
+		      ans		 : out		STD_LOGIC_VECTOR(1 downto 0);
+		      cout		: out 	STD_LOGIC		);
+	end component;
+
+	for U1: add2 use entity WORK.ADD2(STRUCTURE);
+	signal a, b		: STD_LOGIC_VECTOR(1 downto 0);
+	signal cin   : STD_LOGIC;
+	signal ans		 : STD_LOGIC_VECTOR(1 downto 0);
+	signal cout		: STD_LOGIC;
+	
+	begin
+	U1: add2 port map (a,b,cin,ans,cout);
+	
+		process
+		begin
+
+			a <= "00";
+			b <= "00";
+			cin <= '0';
+			wait for 10 ns;
+			assert ( ans = "00" )	report "Failed Case 1 - ans" severity error;
+			assert ( cout = '0' ) report "Failed Case 1 - cout" severity error;
+			wait for 40 ns;
+
+
+			a <= "00";
+			b <= "00";
+			cin <= '1';
+			wait for 10 ns;
+			assert ( ans = "01" )	report "Failed Case 2 - ans" severity error;
+			assert ( cout = '0' ) report "Failed Case 2 - cout" severity error;
+			wait for 40 ns;
+  
+
+			
+		end process;
+END TEST;

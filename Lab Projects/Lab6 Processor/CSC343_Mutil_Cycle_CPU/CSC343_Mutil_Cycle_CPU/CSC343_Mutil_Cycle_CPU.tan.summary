@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.159 ns
+From           : cpu:inst2|Control_Unit:cu|Ry[0]
+To             : Bus[0]
+From Clock     : PClock
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'PClock'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 43.99 MHz ( period = 22.730 ns )
+From           : cpu:inst2|Control_Unit:cu|Ry[0]
+To             : cpu:inst2|Reg:G|Q[15]
+From Clock     : PClock
+To Clock       : PClock
+Failed Paths   : 0
+
+Type           : Clock Setup: 'MClock'
+Slack          : N/A
+Required Time  : None
+Actual Time    : Restricted to 260.01 MHz ( period = 3.846 ns )
+From           : Counter:inst|count[3]
+To             : inst_mem:inst1|altsyncram:altsyncram_component|altsyncram_8t71:auto_generated|ram_block1a0~porta_address_reg3
+From Clock     : MClock
+To Clock       : MClock
+Failed Paths   : 0
+
+Type           : Clock Hold: 'PClock'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : cpu:inst2|IR:inst|IRout[0]
+To             : cpu:inst2|Control_Unit:cu|Ry[0]
+From Clock     : PClock
+To Clock       : PClock
+Failed Paths   : 16
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 16
+
+--------------------------------------------------------------------------------------
+

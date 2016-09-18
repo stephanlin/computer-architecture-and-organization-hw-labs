@@ -1,0 +1,2796 @@
+|4x16_SRAM
+seg_a1 <= Dec_7seg_sel:inst5.seg_a
+sel[0] => Dec_7seg_sel:inst5.sum[0]
+sel[0] => decode2to4:inst.sel[0]
+sel[1] => Dec_7seg_sel:inst5.sum[1]
+sel[1] => decode2to4:inst.sel[1]
+seg_b1 <= Dec_7seg_sel:inst5.seg_b
+seg_c1 <= Dec_7seg_sel:inst5.seg_c
+seg_d1 <= Dec_7seg_sel:inst5.seg_d
+seg_e1 <= Dec_7seg_sel:inst5.seg_e
+seg_f1 <= Dec_7seg_sel:inst5.seg_f
+seg_g1 <= Dec_7seg_sel:inst5.seg_g
+seg_a[0] <= Dec_7seg:inst6.seg_a[0]
+seg_a[1] <= Dec_7seg:inst6.seg_a[1]
+seg_a[2] <= Dec_7seg:inst6.seg_a[2]
+seg_a[3] <= Dec_7seg:inst6.seg_a[3]
+WE => SRAM16:inst8.WE
+WE => SRAM16:inst7.WE
+WE => SRAM16:inst9.WE
+WE => SRAM16:inst10.WE
+Din[0] => SRAM16:inst8.Din[0]
+Din[0] => SRAM16:inst7.Din[0]
+Din[0] => SRAM16:inst9.Din[0]
+Din[0] => SRAM16:inst10.Din[0]
+Din[1] => SRAM16:inst8.Din[1]
+Din[1] => SRAM16:inst7.Din[1]
+Din[1] => SRAM16:inst9.Din[1]
+Din[1] => SRAM16:inst10.Din[1]
+Din[2] => SRAM16:inst8.Din[2]
+Din[2] => SRAM16:inst7.Din[2]
+Din[2] => SRAM16:inst9.Din[2]
+Din[2] => SRAM16:inst10.Din[2]
+Din[3] => SRAM16:inst8.Din[3]
+Din[3] => SRAM16:inst7.Din[3]
+Din[3] => SRAM16:inst9.Din[3]
+Din[3] => SRAM16:inst10.Din[3]
+Din[4] => SRAM16:inst8.Din[4]
+Din[4] => SRAM16:inst7.Din[4]
+Din[4] => SRAM16:inst9.Din[4]
+Din[4] => SRAM16:inst10.Din[4]
+Din[5] => SRAM16:inst8.Din[5]
+Din[5] => SRAM16:inst7.Din[5]
+Din[5] => SRAM16:inst9.Din[5]
+Din[5] => SRAM16:inst10.Din[5]
+Din[6] => SRAM16:inst8.Din[6]
+Din[6] => SRAM16:inst7.Din[6]
+Din[6] => SRAM16:inst9.Din[6]
+Din[6] => SRAM16:inst10.Din[6]
+Din[7] => SRAM16:inst8.Din[7]
+Din[7] => SRAM16:inst7.Din[7]
+Din[7] => SRAM16:inst9.Din[7]
+Din[7] => SRAM16:inst10.Din[7]
+Din[8] => SRAM16:inst8.Din[8]
+Din[8] => SRAM16:inst7.Din[8]
+Din[8] => SRAM16:inst9.Din[8]
+Din[8] => SRAM16:inst10.Din[8]
+Din[9] => SRAM16:inst8.Din[9]
+Din[9] => SRAM16:inst7.Din[9]
+Din[9] => SRAM16:inst9.Din[9]
+Din[9] => SRAM16:inst10.Din[9]
+Din[10] => SRAM16:inst8.Din[10]
+Din[10] => SRAM16:inst7.Din[10]
+Din[10] => SRAM16:inst9.Din[10]
+Din[10] => SRAM16:inst10.Din[10]
+Din[11] => SRAM16:inst8.Din[11]
+Din[11] => SRAM16:inst7.Din[11]
+Din[11] => SRAM16:inst9.Din[11]
+Din[11] => SRAM16:inst10.Din[11]
+Din[12] => SRAM16:inst8.Din[12]
+Din[12] => SRAM16:inst7.Din[12]
+Din[12] => SRAM16:inst9.Din[12]
+Din[12] => SRAM16:inst10.Din[12]
+Din[13] => SRAM16:inst8.Din[13]
+Din[13] => SRAM16:inst7.Din[13]
+Din[13] => SRAM16:inst9.Din[13]
+Din[13] => SRAM16:inst10.Din[13]
+Din[14] => SRAM16:inst8.Din[14]
+Din[14] => SRAM16:inst7.Din[14]
+Din[14] => SRAM16:inst9.Din[14]
+Din[14] => SRAM16:inst10.Din[14]
+Din[15] => SRAM16:inst8.Din[15]
+Din[15] => SRAM16:inst7.Din[15]
+Din[15] => SRAM16:inst9.Din[15]
+Din[15] => SRAM16:inst10.Din[15]
+seg_b[0] <= Dec_7seg:inst6.seg_b[0]
+seg_b[1] <= Dec_7seg:inst6.seg_b[1]
+seg_b[2] <= Dec_7seg:inst6.seg_b[2]
+seg_b[3] <= Dec_7seg:inst6.seg_b[3]
+seg_c[0] <= Dec_7seg:inst6.seg_c[0]
+seg_c[1] <= Dec_7seg:inst6.seg_c[1]
+seg_c[2] <= Dec_7seg:inst6.seg_c[2]
+seg_c[3] <= Dec_7seg:inst6.seg_c[3]
+seg_d[0] <= Dec_7seg:inst6.seg_d[0]
+seg_d[1] <= Dec_7seg:inst6.seg_d[1]
+seg_d[2] <= Dec_7seg:inst6.seg_d[2]
+seg_d[3] <= Dec_7seg:inst6.seg_d[3]
+seg_e[0] <= Dec_7seg:inst6.seg_e[0]
+seg_e[1] <= Dec_7seg:inst6.seg_e[1]
+seg_e[2] <= Dec_7seg:inst6.seg_e[2]
+seg_e[3] <= Dec_7seg:inst6.seg_e[3]
+seg_f[0] <= Dec_7seg:inst6.seg_f[0]
+seg_f[1] <= Dec_7seg:inst6.seg_f[1]
+seg_f[2] <= Dec_7seg:inst6.seg_f[2]
+seg_f[3] <= Dec_7seg:inst6.seg_f[3]
+seg_g[0] <= Dec_7seg:inst6.seg_g[0]
+seg_g[1] <= Dec_7seg:inst6.seg_g[1]
+seg_g[2] <= Dec_7seg:inst6.seg_g[2]
+seg_g[3] <= Dec_7seg:inst6.seg_g[3]
+
+
+|4x16_SRAM|Dec_7seg_sel:inst5
+sum[0] => Mux0.IN5
+sum[0] => Mux1.IN5
+sum[0] => Mux2.IN5
+sum[0] => Mux3.IN5
+sum[0] => seg_e.DATAIN
+sum[1] => Mux0.IN4
+sum[1] => Mux1.IN4
+sum[1] => Mux2.IN4
+sum[1] => Mux3.IN4
+sum[1] => seg_g.DATAIN
+seg_a <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+seg_b <= <GND>
+seg_c <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+seg_d <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+seg_e <= sum[0].DB_MAX_OUTPUT_PORT_TYPE
+seg_f <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+seg_g <= sum[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|Dec_7seg:inst6
+sum[0] => Mux0.IN19
+sum[0] => Mux1.IN19
+sum[0] => Mux2.IN19
+sum[0] => Mux3.IN19
+sum[0] => Mux4.IN19
+sum[0] => Mux5.IN19
+sum[0] => Mux6.IN19
+sum[1] => Mux0.IN18
+sum[1] => Mux1.IN18
+sum[1] => Mux2.IN18
+sum[1] => Mux3.IN18
+sum[1] => Mux4.IN18
+sum[1] => Mux5.IN18
+sum[1] => Mux6.IN18
+sum[2] => Mux0.IN17
+sum[2] => Mux1.IN17
+sum[2] => Mux2.IN17
+sum[2] => Mux3.IN17
+sum[2] => Mux4.IN17
+sum[2] => Mux5.IN17
+sum[2] => Mux6.IN17
+sum[3] => Mux0.IN16
+sum[3] => Mux1.IN16
+sum[3] => Mux2.IN16
+sum[3] => Mux3.IN16
+sum[3] => Mux4.IN16
+sum[3] => Mux5.IN16
+sum[3] => Mux6.IN16
+sum[4] => Mux7.IN19
+sum[4] => Mux8.IN19
+sum[4] => Mux9.IN19
+sum[4] => Mux10.IN19
+sum[4] => Mux11.IN19
+sum[4] => Mux12.IN19
+sum[4] => Mux13.IN19
+sum[5] => Mux7.IN18
+sum[5] => Mux8.IN18
+sum[5] => Mux9.IN18
+sum[5] => Mux10.IN18
+sum[5] => Mux11.IN18
+sum[5] => Mux12.IN18
+sum[5] => Mux13.IN18
+sum[6] => Mux7.IN17
+sum[6] => Mux8.IN17
+sum[6] => Mux9.IN17
+sum[6] => Mux10.IN17
+sum[6] => Mux11.IN17
+sum[6] => Mux12.IN17
+sum[6] => Mux13.IN17
+sum[7] => Mux7.IN16
+sum[7] => Mux8.IN16
+sum[7] => Mux9.IN16
+sum[7] => Mux10.IN16
+sum[7] => Mux11.IN16
+sum[7] => Mux12.IN16
+sum[7] => Mux13.IN16
+sum[8] => Mux14.IN19
+sum[8] => Mux15.IN19
+sum[8] => Mux16.IN19
+sum[8] => Mux17.IN19
+sum[8] => Mux18.IN19
+sum[8] => Mux19.IN19
+sum[8] => Mux20.IN19
+sum[9] => Mux14.IN18
+sum[9] => Mux15.IN18
+sum[9] => Mux16.IN18
+sum[9] => Mux17.IN18
+sum[9] => Mux18.IN18
+sum[9] => Mux19.IN18
+sum[9] => Mux20.IN18
+sum[10] => Mux14.IN17
+sum[10] => Mux15.IN17
+sum[10] => Mux16.IN17
+sum[10] => Mux17.IN17
+sum[10] => Mux18.IN17
+sum[10] => Mux19.IN17
+sum[10] => Mux20.IN17
+sum[11] => Mux14.IN16
+sum[11] => Mux15.IN16
+sum[11] => Mux16.IN16
+sum[11] => Mux17.IN16
+sum[11] => Mux18.IN16
+sum[11] => Mux19.IN16
+sum[11] => Mux20.IN16
+sum[12] => Mux21.IN19
+sum[12] => Mux22.IN19
+sum[12] => Mux23.IN19
+sum[12] => Mux24.IN19
+sum[12] => Mux25.IN19
+sum[12] => Mux26.IN19
+sum[12] => Mux27.IN19
+sum[13] => Mux21.IN18
+sum[13] => Mux22.IN18
+sum[13] => Mux23.IN18
+sum[13] => Mux24.IN18
+sum[13] => Mux25.IN18
+sum[13] => Mux26.IN18
+sum[13] => Mux27.IN18
+sum[14] => Mux21.IN17
+sum[14] => Mux22.IN17
+sum[14] => Mux23.IN17
+sum[14] => Mux24.IN17
+sum[14] => Mux25.IN17
+sum[14] => Mux26.IN17
+sum[14] => Mux27.IN17
+sum[15] => Mux21.IN16
+sum[15] => Mux22.IN16
+sum[15] => Mux23.IN16
+sum[15] => Mux24.IN16
+sum[15] => Mux25.IN16
+sum[15] => Mux26.IN16
+sum[15] => Mux27.IN16
+seg_a[0] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+seg_a[1] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+seg_a[2] <= Mux14.DB_MAX_OUTPUT_PORT_TYPE
+seg_a[3] <= Mux21.DB_MAX_OUTPUT_PORT_TYPE
+seg_b[0] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+seg_b[1] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+seg_b[2] <= Mux15.DB_MAX_OUTPUT_PORT_TYPE
+seg_b[3] <= Mux22.DB_MAX_OUTPUT_PORT_TYPE
+seg_c[0] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+seg_c[1] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+seg_c[2] <= Mux16.DB_MAX_OUTPUT_PORT_TYPE
+seg_c[3] <= Mux23.DB_MAX_OUTPUT_PORT_TYPE
+seg_d[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+seg_d[1] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+seg_d[2] <= Mux17.DB_MAX_OUTPUT_PORT_TYPE
+seg_d[3] <= Mux24.DB_MAX_OUTPUT_PORT_TYPE
+seg_e[0] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+seg_e[1] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+seg_e[2] <= Mux18.DB_MAX_OUTPUT_PORT_TYPE
+seg_e[3] <= Mux25.DB_MAX_OUTPUT_PORT_TYPE
+seg_f[0] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+seg_f[1] <= Mux12.DB_MAX_OUTPUT_PORT_TYPE
+seg_f[2] <= Mux19.DB_MAX_OUTPUT_PORT_TYPE
+seg_f[3] <= Mux26.DB_MAX_OUTPUT_PORT_TYPE
+seg_g[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+seg_g[1] <= Mux13.DB_MAX_OUTPUT_PORT_TYPE
+seg_g[2] <= Mux20.DB_MAX_OUTPUT_PORT_TYPE
+seg_g[3] <= Mux27.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8
+Din[0] => SRAM:s16_s0.Din
+Din[1] => SRAM:s16_s1.Din
+Din[2] => SRAM:s16_s2.Din
+Din[3] => SRAM:s16_s3.Din
+Din[4] => SRAM:s16_s4.Din
+Din[5] => SRAM:s16_s5.Din
+Din[6] => SRAM:s16_s6.Din
+Din[7] => SRAM:s16_s7.Din
+Din[8] => SRAM:s16_s8.Din
+Din[9] => SRAM:s16_s9.Din
+Din[10] => SRAM:s16_s10.Din
+Din[11] => SRAM:s16_s11.Din
+Din[12] => SRAM:s16_s12.Din
+Din[13] => SRAM:s16_s13.Din
+Din[14] => SRAM:s16_s14.Din
+Din[15] => SRAM:s16_s15.Din
+CS => SRAM:s16_s0.CS
+CS => Q[0]~0.OE
+CS => Q[1]~1.OE
+CS => Q[2]~2.OE
+CS => Q[3]~3.OE
+CS => Q[4]~4.OE
+CS => Q[5]~5.OE
+CS => Q[6]~6.OE
+CS => Q[7]~7.OE
+CS => Q[8]~8.OE
+CS => Q[9]~9.OE
+CS => Q[10]~10.OE
+CS => Q[11]~11.OE
+CS => Q[12]~12.OE
+CS => Q[13]~13.OE
+CS => Q[14]~14.OE
+CS => Q[15]~15.OE
+CS => SRAM:s16_s1.CS
+CS => SRAM:s16_s2.CS
+CS => SRAM:s16_s3.CS
+CS => SRAM:s16_s4.CS
+CS => SRAM:s16_s5.CS
+CS => SRAM:s16_s6.CS
+CS => SRAM:s16_s7.CS
+CS => SRAM:s16_s8.CS
+CS => SRAM:s16_s9.CS
+CS => SRAM:s16_s10.CS
+CS => SRAM:s16_s11.CS
+CS => SRAM:s16_s12.CS
+CS => SRAM:s16_s13.CS
+CS => SRAM:s16_s14.CS
+CS => SRAM:s16_s15.CS
+WE => SRAM:s16_s0.WE
+WE => SRAM:s16_s1.WE
+WE => SRAM:s16_s2.WE
+WE => SRAM:s16_s3.WE
+WE => SRAM:s16_s4.WE
+WE => SRAM:s16_s5.WE
+WE => SRAM:s16_s6.WE
+WE => SRAM:s16_s7.WE
+WE => SRAM:s16_s8.WE
+WE => SRAM:s16_s9.WE
+WE => SRAM:s16_s10.WE
+WE => SRAM:s16_s11.WE
+WE => SRAM:s16_s12.WE
+WE => SRAM:s16_s13.WE
+WE => SRAM:s16_s14.WE
+WE => SRAM:s16_s15.WE
+Q[0] <= Q[0]~0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~1.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~2.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~3.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~4.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~5.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~6.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~7.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~8.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~9.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~10.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~11.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~12.DB_MAX_OUTPUT_PORT_TYPE
+Q[13] <= Q[13]~13.DB_MAX_OUTPUT_PORT_TYPE
+Q[14] <= Q[14]~14.DB_MAX_OUTPUT_PORT_TYPE
+Q[15] <= Q[15]~15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s0
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s0|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s0|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s0|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s1
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s1|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s1|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s1|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s2
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s2|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s2|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s2|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s3
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s3|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s3|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s3|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s4
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s4|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s4|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s4|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s5
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s5|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s5|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s5|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s6
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s6|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s6|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s6|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s7
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s7|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s7|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s7|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s8
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s8|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s8|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s8|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s9
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s9|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s9|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s9|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s10
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s10|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s10|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s10|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s11
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s11|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s11|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s11|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s12
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s12|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s12|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s12|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s13
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s13|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s13|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s13|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s14
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s14|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s14|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s14|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s15
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s15|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s15|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst8|SRAM:s16_s15|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|decode2to4:inst
+sel[0] => Mux0.IN5
+sel[0] => Mux1.IN5
+sel[0] => Mux2.IN5
+sel[0] => Mux3.IN5
+sel[1] => Mux0.IN4
+sel[1] => Mux1.IN4
+sel[1] => Mux2.IN4
+sel[1] => Mux3.IN4
+d0 <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+d1 <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+d2 <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+d3 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7
+Din[0] => SRAM:s16_s0.Din
+Din[1] => SRAM:s16_s1.Din
+Din[2] => SRAM:s16_s2.Din
+Din[3] => SRAM:s16_s3.Din
+Din[4] => SRAM:s16_s4.Din
+Din[5] => SRAM:s16_s5.Din
+Din[6] => SRAM:s16_s6.Din
+Din[7] => SRAM:s16_s7.Din
+Din[8] => SRAM:s16_s8.Din
+Din[9] => SRAM:s16_s9.Din
+Din[10] => SRAM:s16_s10.Din
+Din[11] => SRAM:s16_s11.Din
+Din[12] => SRAM:s16_s12.Din
+Din[13] => SRAM:s16_s13.Din
+Din[14] => SRAM:s16_s14.Din
+Din[15] => SRAM:s16_s15.Din
+CS => SRAM:s16_s0.CS
+CS => Q[0]~0.OE
+CS => Q[1]~1.OE
+CS => Q[2]~2.OE
+CS => Q[3]~3.OE
+CS => Q[4]~4.OE
+CS => Q[5]~5.OE
+CS => Q[6]~6.OE
+CS => Q[7]~7.OE
+CS => Q[8]~8.OE
+CS => Q[9]~9.OE
+CS => Q[10]~10.OE
+CS => Q[11]~11.OE
+CS => Q[12]~12.OE
+CS => Q[13]~13.OE
+CS => Q[14]~14.OE
+CS => Q[15]~15.OE
+CS => SRAM:s16_s1.CS
+CS => SRAM:s16_s2.CS
+CS => SRAM:s16_s3.CS
+CS => SRAM:s16_s4.CS
+CS => SRAM:s16_s5.CS
+CS => SRAM:s16_s6.CS
+CS => SRAM:s16_s7.CS
+CS => SRAM:s16_s8.CS
+CS => SRAM:s16_s9.CS
+CS => SRAM:s16_s10.CS
+CS => SRAM:s16_s11.CS
+CS => SRAM:s16_s12.CS
+CS => SRAM:s16_s13.CS
+CS => SRAM:s16_s14.CS
+CS => SRAM:s16_s15.CS
+WE => SRAM:s16_s0.WE
+WE => SRAM:s16_s1.WE
+WE => SRAM:s16_s2.WE
+WE => SRAM:s16_s3.WE
+WE => SRAM:s16_s4.WE
+WE => SRAM:s16_s5.WE
+WE => SRAM:s16_s6.WE
+WE => SRAM:s16_s7.WE
+WE => SRAM:s16_s8.WE
+WE => SRAM:s16_s9.WE
+WE => SRAM:s16_s10.WE
+WE => SRAM:s16_s11.WE
+WE => SRAM:s16_s12.WE
+WE => SRAM:s16_s13.WE
+WE => SRAM:s16_s14.WE
+WE => SRAM:s16_s15.WE
+Q[0] <= Q[0]~0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~1.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~2.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~3.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~4.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~5.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~6.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~7.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~8.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~9.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~10.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~11.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~12.DB_MAX_OUTPUT_PORT_TYPE
+Q[13] <= Q[13]~13.DB_MAX_OUTPUT_PORT_TYPE
+Q[14] <= Q[14]~14.DB_MAX_OUTPUT_PORT_TYPE
+Q[15] <= Q[15]~15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s0
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s0|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s0|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s0|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s1
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s1|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s1|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s1|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s2
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s2|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s2|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s2|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s3
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s3|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s3|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s3|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s4
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s4|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s4|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s4|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s5
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s5|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s5|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s5|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s6
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s6|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s6|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s6|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s7
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s7|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s7|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s7|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s8
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s8|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s8|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s8|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s9
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s9|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s9|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s9|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s10
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s10|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s10|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s10|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s11
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s11|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s11|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s11|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s12
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s12|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s12|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s12|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s13
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s13|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s13|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s13|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s14
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s14|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s14|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s14|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s15
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s15|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s15|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst7|SRAM:s16_s15|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9
+Din[0] => SRAM:s16_s0.Din
+Din[1] => SRAM:s16_s1.Din
+Din[2] => SRAM:s16_s2.Din
+Din[3] => SRAM:s16_s3.Din
+Din[4] => SRAM:s16_s4.Din
+Din[5] => SRAM:s16_s5.Din
+Din[6] => SRAM:s16_s6.Din
+Din[7] => SRAM:s16_s7.Din
+Din[8] => SRAM:s16_s8.Din
+Din[9] => SRAM:s16_s9.Din
+Din[10] => SRAM:s16_s10.Din
+Din[11] => SRAM:s16_s11.Din
+Din[12] => SRAM:s16_s12.Din
+Din[13] => SRAM:s16_s13.Din
+Din[14] => SRAM:s16_s14.Din
+Din[15] => SRAM:s16_s15.Din
+CS => SRAM:s16_s0.CS
+CS => Q[0]~0.OE
+CS => Q[1]~1.OE
+CS => Q[2]~2.OE
+CS => Q[3]~3.OE
+CS => Q[4]~4.OE
+CS => Q[5]~5.OE
+CS => Q[6]~6.OE
+CS => Q[7]~7.OE
+CS => Q[8]~8.OE
+CS => Q[9]~9.OE
+CS => Q[10]~10.OE
+CS => Q[11]~11.OE
+CS => Q[12]~12.OE
+CS => Q[13]~13.OE
+CS => Q[14]~14.OE
+CS => Q[15]~15.OE
+CS => SRAM:s16_s1.CS
+CS => SRAM:s16_s2.CS
+CS => SRAM:s16_s3.CS
+CS => SRAM:s16_s4.CS
+CS => SRAM:s16_s5.CS
+CS => SRAM:s16_s6.CS
+CS => SRAM:s16_s7.CS
+CS => SRAM:s16_s8.CS
+CS => SRAM:s16_s9.CS
+CS => SRAM:s16_s10.CS
+CS => SRAM:s16_s11.CS
+CS => SRAM:s16_s12.CS
+CS => SRAM:s16_s13.CS
+CS => SRAM:s16_s14.CS
+CS => SRAM:s16_s15.CS
+WE => SRAM:s16_s0.WE
+WE => SRAM:s16_s1.WE
+WE => SRAM:s16_s2.WE
+WE => SRAM:s16_s3.WE
+WE => SRAM:s16_s4.WE
+WE => SRAM:s16_s5.WE
+WE => SRAM:s16_s6.WE
+WE => SRAM:s16_s7.WE
+WE => SRAM:s16_s8.WE
+WE => SRAM:s16_s9.WE
+WE => SRAM:s16_s10.WE
+WE => SRAM:s16_s11.WE
+WE => SRAM:s16_s12.WE
+WE => SRAM:s16_s13.WE
+WE => SRAM:s16_s14.WE
+WE => SRAM:s16_s15.WE
+Q[0] <= Q[0]~0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~1.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~2.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~3.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~4.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~5.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~6.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~7.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~8.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~9.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~10.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~11.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~12.DB_MAX_OUTPUT_PORT_TYPE
+Q[13] <= Q[13]~13.DB_MAX_OUTPUT_PORT_TYPE
+Q[14] <= Q[14]~14.DB_MAX_OUTPUT_PORT_TYPE
+Q[15] <= Q[15]~15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s0
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s0|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s0|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s0|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s1
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s1|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s1|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s1|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s2
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s2|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s2|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s2|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s3
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s3|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s3|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s3|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s4
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s4|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s4|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s4|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s5
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s5|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s5|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s5|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s6
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s6|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s6|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s6|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s7
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s7|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s7|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s7|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s8
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s8|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s8|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s8|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s9
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s9|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s9|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s9|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s10
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s10|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s10|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s10|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s11
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s11|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s11|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s11|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s12
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s12|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s12|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s12|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s13
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s13|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s13|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s13|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s14
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s14|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s14|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s14|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s15
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s15|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s15|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst9|SRAM:s16_s15|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10
+Din[0] => SRAM:s16_s0.Din
+Din[1] => SRAM:s16_s1.Din
+Din[2] => SRAM:s16_s2.Din
+Din[3] => SRAM:s16_s3.Din
+Din[4] => SRAM:s16_s4.Din
+Din[5] => SRAM:s16_s5.Din
+Din[6] => SRAM:s16_s6.Din
+Din[7] => SRAM:s16_s7.Din
+Din[8] => SRAM:s16_s8.Din
+Din[9] => SRAM:s16_s9.Din
+Din[10] => SRAM:s16_s10.Din
+Din[11] => SRAM:s16_s11.Din
+Din[12] => SRAM:s16_s12.Din
+Din[13] => SRAM:s16_s13.Din
+Din[14] => SRAM:s16_s14.Din
+Din[15] => SRAM:s16_s15.Din
+CS => SRAM:s16_s0.CS
+CS => Q[0]~0.OE
+CS => Q[1]~1.OE
+CS => Q[2]~2.OE
+CS => Q[3]~3.OE
+CS => Q[4]~4.OE
+CS => Q[5]~5.OE
+CS => Q[6]~6.OE
+CS => Q[7]~7.OE
+CS => Q[8]~8.OE
+CS => Q[9]~9.OE
+CS => Q[10]~10.OE
+CS => Q[11]~11.OE
+CS => Q[12]~12.OE
+CS => Q[13]~13.OE
+CS => Q[14]~14.OE
+CS => Q[15]~15.OE
+CS => SRAM:s16_s1.CS
+CS => SRAM:s16_s2.CS
+CS => SRAM:s16_s3.CS
+CS => SRAM:s16_s4.CS
+CS => SRAM:s16_s5.CS
+CS => SRAM:s16_s6.CS
+CS => SRAM:s16_s7.CS
+CS => SRAM:s16_s8.CS
+CS => SRAM:s16_s9.CS
+CS => SRAM:s16_s10.CS
+CS => SRAM:s16_s11.CS
+CS => SRAM:s16_s12.CS
+CS => SRAM:s16_s13.CS
+CS => SRAM:s16_s14.CS
+CS => SRAM:s16_s15.CS
+WE => SRAM:s16_s0.WE
+WE => SRAM:s16_s1.WE
+WE => SRAM:s16_s2.WE
+WE => SRAM:s16_s3.WE
+WE => SRAM:s16_s4.WE
+WE => SRAM:s16_s5.WE
+WE => SRAM:s16_s6.WE
+WE => SRAM:s16_s7.WE
+WE => SRAM:s16_s8.WE
+WE => SRAM:s16_s9.WE
+WE => SRAM:s16_s10.WE
+WE => SRAM:s16_s11.WE
+WE => SRAM:s16_s12.WE
+WE => SRAM:s16_s13.WE
+WE => SRAM:s16_s14.WE
+WE => SRAM:s16_s15.WE
+Q[0] <= Q[0]~0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~1.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~2.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~3.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~4.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~5.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~6.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~7.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~8.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~9.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~10.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~11.DB_MAX_OUTPUT_PORT_TYPE
+Q[12] <= Q[12]~12.DB_MAX_OUTPUT_PORT_TYPE
+Q[13] <= Q[13]~13.DB_MAX_OUTPUT_PORT_TYPE
+Q[14] <= Q[14]~14.DB_MAX_OUTPUT_PORT_TYPE
+Q[15] <= Q[15]~15.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s0
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s0|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s0|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s0|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s1
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s1|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s1|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s1|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s2
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s2|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s2|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s2|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s3
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s3|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s3|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s3|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s4
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s4|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s4|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s4|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s5
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s5|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s5|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s5|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s6
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s6|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s6|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s6|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s7
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s7|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s7|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s7|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s8
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s8|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s8|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s8|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s9
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s9|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s9|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s9|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s10
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s10|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s10|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s10|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s11
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s11|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s11|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s11|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s12
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s12|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s12|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s12|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s13
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s13|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s13|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s13|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s14
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s14|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s14|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s14|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s15
+Din => Positive_Dff:s0.D
+CS => Clk.IN0
+CS => Q~0.OE
+WE => Clk.IN1
+Q <= Q~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s15|Positive_Dff:s0
+D => D_latch:p_dff0.D
+C => D_latch:p_dff1.C
+C => D_latch:p_dff0.C
+Q <= D_latch:p_dff1.Q
+notQ <= D_latch:p_dff1.notQ
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s15|Positive_Dff:s0|D_latch:p_dff0
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|4x16_SRAM|SRAM16:inst10|SRAM:s16_s15|Positive_Dff:s0|D_latch:p_dff1
+D => Q$latch.DATAIN
+D => notQ$latch.DATAIN
+C => notQ$latch.LATCH_ENABLE
+C => Q$latch.LATCH_ENABLE
+Q <= Q$latch.DB_MAX_OUTPUT_PORT_TYPE
+notQ <= notQ$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

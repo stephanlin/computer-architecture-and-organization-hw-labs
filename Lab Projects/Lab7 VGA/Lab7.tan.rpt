@@ -1,0 +1,1117 @@
+Classic Timing Analyzer report for Lab7
+Thu Nov 20 12:06:33 2014
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. Clock Setup: 'Move'
+  8. Clock Hold: 'clk'
+  9. tsu
+ 10. tco
+ 11. tpd
+ 12. th
+ 13. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                       ;
++------------------------------+-----------+----------------------------------+----------------------------------+-----------------------------------+-----------------------------------+------------+----------+--------------+
+; Type                         ; Slack     ; Required Time                    ; Actual Time                      ; From                              ; To                                ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-----------+----------------------------------+----------------------------------+-----------------------------------+-----------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A       ; None                             ; 6.403 ns                         ; D                                 ; Pos_Controler:inst1|y[9]          ; --         ; Move     ; 0            ;
+; Worst-case tco               ; N/A       ; None                             ; 13.457 ns                        ; Pos_Controler:inst1|x[4]          ; VGA_RGB[0]                        ; Move       ; --       ; 0            ;
+; Worst-case tpd               ; N/A       ; None                             ; 8.142 ns                         ; Color_in[0]                       ; VGA_RGB[0]                        ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A       ; None                             ; -1.112 ns                        ; R                                 ; Pos_Controler:inst1|x[9]          ; --         ; Move     ; 0            ;
+; Clock Setup: 'clk'           ; 16.734 ns ; 50.00 MHz ( period = 20.000 ns ) ; 306.18 MHz ( period = 3.266 ns ) ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0            ;
+; Clock Setup: 'Move'          ; N/A       ; None                             ; 215.98 MHz ( period = 4.630 ns ) ; Pos_Controler:inst1|x[2]          ; Pos_Controler:inst1|x[9]          ; Move       ; Move     ; 0            ;
+; Clock Hold: 'clk'            ; 0.391 ns  ; 50.00 MHz ( period = 20.000 ns ) ; N/A                              ; vga_sync:inst2|current_mod2       ; vga_sync:inst2|current_mod2       ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;           ;                                  ;                                  ;                                   ;                                   ;            ;          ; 0            ;
++------------------------------+-----------+----------------------------------+----------------------------------+-----------------------------------+-----------------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C35F672C6       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                                                           ;
++------------------------------------------+--------------------+------------+------------------+---------------+--------------+----------+-----------------------+---------------------+-----------+--------------+
+; Clock Node Name                          ; Clock Setting Name ; Type       ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset    ; Phase offset ;
++------------------------------------------+--------------------+------------+------------------+---------------+--------------+----------+-----------------------+---------------------+-----------+--------------+
+; PLL:inst13|altpll:altpll_component|_clk0 ;                    ; PLL output ; 25.0 MHz         ; 0.000 ns      ; 0.000 ns     ; clk      ; 1                     ; 2                   ; -2.358 ns ;              ;
+; clk                                      ;                    ; User Pin   ; 50.0 MHz         ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A       ;              ;
+; Move                                     ;                    ; User Pin   ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A       ;              ;
++------------------------------------------+--------------------+------------+------------------+---------------+--------------+----------+-----------------------+---------------------+-----------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------+-----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                              ; To                                ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------+-----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; 16.734 ns                               ; 306.18 MHz ( period = 3.266 ns )                    ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.056 ns                ;
+; 16.734 ns                               ; 306.18 MHz ( period = 3.266 ns )                    ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.056 ns                ;
+; 16.734 ns                               ; 306.18 MHz ( period = 3.266 ns )                    ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.056 ns                ;
+; 16.734 ns                               ; 306.18 MHz ( period = 3.266 ns )                    ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.056 ns                ;
+; 16.734 ns                               ; 306.18 MHz ( period = 3.266 ns )                    ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.056 ns                ;
+; 16.734 ns                               ; 306.18 MHz ( period = 3.266 ns )                    ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.056 ns                ;
+; 16.734 ns                               ; 306.18 MHz ( period = 3.266 ns )                    ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.056 ns                ;
+; 16.734 ns                               ; 306.18 MHz ( period = 3.266 ns )                    ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.056 ns                ;
+; 16.734 ns                               ; 306.18 MHz ( period = 3.266 ns )                    ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.056 ns                ;
+; 16.734 ns                               ; 306.18 MHz ( period = 3.266 ns )                    ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.056 ns                ;
+; 16.781 ns                               ; 310.66 MHz ( period = 3.219 ns )                    ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 3.010 ns                ;
+; 16.781 ns                               ; 310.66 MHz ( period = 3.219 ns )                    ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 3.010 ns                ;
+; 16.781 ns                               ; 310.66 MHz ( period = 3.219 ns )                    ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 3.010 ns                ;
+; 16.781 ns                               ; 310.66 MHz ( period = 3.219 ns )                    ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 3.010 ns                ;
+; 16.781 ns                               ; 310.66 MHz ( period = 3.219 ns )                    ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 3.010 ns                ;
+; 16.781 ns                               ; 310.66 MHz ( period = 3.219 ns )                    ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 3.010 ns                ;
+; 16.781 ns                               ; 310.66 MHz ( period = 3.219 ns )                    ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 3.010 ns                ;
+; 16.781 ns                               ; 310.66 MHz ( period = 3.219 ns )                    ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 3.010 ns                ;
+; 16.781 ns                               ; 310.66 MHz ( period = 3.219 ns )                    ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 3.010 ns                ;
+; 16.781 ns                               ; 310.66 MHz ( period = 3.219 ns )                    ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 3.010 ns                ;
+; 16.786 ns                               ; 311.14 MHz ( period = 3.214 ns )                    ; vga_sync:inst2|current_h_count[4] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.004 ns                ;
+; 16.786 ns                               ; 311.14 MHz ( period = 3.214 ns )                    ; vga_sync:inst2|current_h_count[4] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.004 ns                ;
+; 16.786 ns                               ; 311.14 MHz ( period = 3.214 ns )                    ; vga_sync:inst2|current_h_count[4] ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.004 ns                ;
+; 16.786 ns                               ; 311.14 MHz ( period = 3.214 ns )                    ; vga_sync:inst2|current_h_count[4] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.004 ns                ;
+; 16.786 ns                               ; 311.14 MHz ( period = 3.214 ns )                    ; vga_sync:inst2|current_h_count[4] ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.004 ns                ;
+; 16.786 ns                               ; 311.14 MHz ( period = 3.214 ns )                    ; vga_sync:inst2|current_h_count[4] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.004 ns                ;
+; 16.786 ns                               ; 311.14 MHz ( period = 3.214 ns )                    ; vga_sync:inst2|current_h_count[4] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.004 ns                ;
+; 16.786 ns                               ; 311.14 MHz ( period = 3.214 ns )                    ; vga_sync:inst2|current_h_count[4] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.004 ns                ;
+; 16.786 ns                               ; 311.14 MHz ( period = 3.214 ns )                    ; vga_sync:inst2|current_h_count[4] ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.004 ns                ;
+; 16.786 ns                               ; 311.14 MHz ( period = 3.214 ns )                    ; vga_sync:inst2|current_h_count[4] ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 3.004 ns                ;
+; 16.824 ns                               ; 314.86 MHz ( period = 3.176 ns )                    ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.962 ns                ;
+; 16.843 ns                               ; 316.76 MHz ( period = 3.157 ns )                    ; vga_sync:inst2|current_h_count[7] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.947 ns                ;
+; 16.843 ns                               ; 316.76 MHz ( period = 3.157 ns )                    ; vga_sync:inst2|current_h_count[7] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.947 ns                ;
+; 16.843 ns                               ; 316.76 MHz ( period = 3.157 ns )                    ; vga_sync:inst2|current_h_count[7] ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.947 ns                ;
+; 16.843 ns                               ; 316.76 MHz ( period = 3.157 ns )                    ; vga_sync:inst2|current_h_count[7] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.947 ns                ;
+; 16.843 ns                               ; 316.76 MHz ( period = 3.157 ns )                    ; vga_sync:inst2|current_h_count[7] ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.947 ns                ;
+; 16.843 ns                               ; 316.76 MHz ( period = 3.157 ns )                    ; vga_sync:inst2|current_h_count[7] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.947 ns                ;
+; 16.843 ns                               ; 316.76 MHz ( period = 3.157 ns )                    ; vga_sync:inst2|current_h_count[7] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.947 ns                ;
+; 16.843 ns                               ; 316.76 MHz ( period = 3.157 ns )                    ; vga_sync:inst2|current_h_count[7] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.947 ns                ;
+; 16.843 ns                               ; 316.76 MHz ( period = 3.157 ns )                    ; vga_sync:inst2|current_h_count[7] ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.947 ns                ;
+; 16.843 ns                               ; 316.76 MHz ( period = 3.157 ns )                    ; vga_sync:inst2|current_h_count[7] ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.947 ns                ;
+; 16.844 ns                               ; 316.86 MHz ( period = 3.156 ns )                    ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.942 ns                ;
+; 16.945 ns                               ; 327.33 MHz ( period = 3.055 ns )                    ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.845 ns                ;
+; 16.945 ns                               ; 327.33 MHz ( period = 3.055 ns )                    ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.845 ns                ;
+; 16.945 ns                               ; 327.33 MHz ( period = 3.055 ns )                    ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.845 ns                ;
+; 16.945 ns                               ; 327.33 MHz ( period = 3.055 ns )                    ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.845 ns                ;
+; 16.945 ns                               ; 327.33 MHz ( period = 3.055 ns )                    ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.845 ns                ;
+; 16.945 ns                               ; 327.33 MHz ( period = 3.055 ns )                    ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.845 ns                ;
+; 16.945 ns                               ; 327.33 MHz ( period = 3.055 ns )                    ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.845 ns                ;
+; 16.945 ns                               ; 327.33 MHz ( period = 3.055 ns )                    ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.845 ns                ;
+; 16.945 ns                               ; 327.33 MHz ( period = 3.055 ns )                    ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.845 ns                ;
+; 16.945 ns                               ; 327.33 MHz ( period = 3.055 ns )                    ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.845 ns                ;
+; 16.958 ns                               ; 328.73 MHz ( period = 3.042 ns )                    ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.828 ns                ;
+; 16.982 ns                               ; 331.35 MHz ( period = 3.018 ns )                    ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.787 ns                 ; 2.805 ns                ;
+; 16.986 ns                               ; 331.79 MHz ( period = 3.014 ns )                    ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.800 ns                ;
+; 17.052 ns                               ; 339.21 MHz ( period = 2.948 ns )                    ; vga_sync:inst2|current_h_count[6] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.738 ns                ;
+; 17.052 ns                               ; 339.21 MHz ( period = 2.948 ns )                    ; vga_sync:inst2|current_h_count[6] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.738 ns                ;
+; 17.052 ns                               ; 339.21 MHz ( period = 2.948 ns )                    ; vga_sync:inst2|current_h_count[6] ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.738 ns                ;
+; 17.052 ns                               ; 339.21 MHz ( period = 2.948 ns )                    ; vga_sync:inst2|current_h_count[6] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.738 ns                ;
+; 17.052 ns                               ; 339.21 MHz ( period = 2.948 ns )                    ; vga_sync:inst2|current_h_count[6] ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.738 ns                ;
+; 17.052 ns                               ; 339.21 MHz ( period = 2.948 ns )                    ; vga_sync:inst2|current_h_count[6] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.738 ns                ;
+; 17.052 ns                               ; 339.21 MHz ( period = 2.948 ns )                    ; vga_sync:inst2|current_h_count[6] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.738 ns                ;
+; 17.052 ns                               ; 339.21 MHz ( period = 2.948 ns )                    ; vga_sync:inst2|current_h_count[6] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.738 ns                ;
+; 17.052 ns                               ; 339.21 MHz ( period = 2.948 ns )                    ; vga_sync:inst2|current_h_count[6] ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.738 ns                ;
+; 17.052 ns                               ; 339.21 MHz ( period = 2.948 ns )                    ; vga_sync:inst2|current_h_count[6] ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.738 ns                ;
+; 17.057 ns                               ; 339.79 MHz ( period = 2.943 ns )                    ; vga_sync:inst2|current_h_count[4] ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.729 ns                ;
+; 17.069 ns                               ; 341.18 MHz ( period = 2.931 ns )                    ; vga_sync:inst2|current_mod2       ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 2.722 ns                ;
+; 17.069 ns                               ; 341.18 MHz ( period = 2.931 ns )                    ; vga_sync:inst2|current_mod2       ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 2.722 ns                ;
+; 17.069 ns                               ; 341.18 MHz ( period = 2.931 ns )                    ; vga_sync:inst2|current_mod2       ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 2.722 ns                ;
+; 17.069 ns                               ; 341.18 MHz ( period = 2.931 ns )                    ; vga_sync:inst2|current_mod2       ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 2.722 ns                ;
+; 17.069 ns                               ; 341.18 MHz ( period = 2.931 ns )                    ; vga_sync:inst2|current_mod2       ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 2.722 ns                ;
+; 17.069 ns                               ; 341.18 MHz ( period = 2.931 ns )                    ; vga_sync:inst2|current_mod2       ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 2.722 ns                ;
+; 17.069 ns                               ; 341.18 MHz ( period = 2.931 ns )                    ; vga_sync:inst2|current_mod2       ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 2.722 ns                ;
+; 17.069 ns                               ; 341.18 MHz ( period = 2.931 ns )                    ; vga_sync:inst2|current_mod2       ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 2.722 ns                ;
+; 17.069 ns                               ; 341.18 MHz ( period = 2.931 ns )                    ; vga_sync:inst2|current_mod2       ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 2.722 ns                ;
+; 17.069 ns                               ; 341.18 MHz ( period = 2.931 ns )                    ; vga_sync:inst2|current_mod2       ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 20.000 ns                   ; 19.791 ns                 ; 2.722 ns                ;
+; 17.070 ns                               ; 341.30 MHz ( period = 2.930 ns )                    ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.720 ns                ;
+; 17.070 ns                               ; 341.30 MHz ( period = 2.930 ns )                    ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.720 ns                ;
+; 17.070 ns                               ; 341.30 MHz ( period = 2.930 ns )                    ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.720 ns                ;
+; 17.070 ns                               ; 341.30 MHz ( period = 2.930 ns )                    ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.720 ns                ;
+; 17.070 ns                               ; 341.30 MHz ( period = 2.930 ns )                    ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.720 ns                ;
+; 17.070 ns                               ; 341.30 MHz ( period = 2.930 ns )                    ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.720 ns                ;
+; 17.070 ns                               ; 341.30 MHz ( period = 2.930 ns )                    ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.720 ns                ;
+; 17.070 ns                               ; 341.30 MHz ( period = 2.930 ns )                    ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.720 ns                ;
+; 17.070 ns                               ; 341.30 MHz ( period = 2.930 ns )                    ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.720 ns                ;
+; 17.070 ns                               ; 341.30 MHz ( period = 2.930 ns )                    ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.720 ns                ;
+; 17.197 ns                               ; 356.76 MHz ( period = 2.803 ns )                    ; vga_sync:inst2|current_h_count[8] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.593 ns                ;
+; 17.197 ns                               ; 356.76 MHz ( period = 2.803 ns )                    ; vga_sync:inst2|current_h_count[8] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.593 ns                ;
+; 17.197 ns                               ; 356.76 MHz ( period = 2.803 ns )                    ; vga_sync:inst2|current_h_count[8] ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.593 ns                ;
+; 17.197 ns                               ; 356.76 MHz ( period = 2.803 ns )                    ; vga_sync:inst2|current_h_count[8] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.593 ns                ;
+; 17.197 ns                               ; 356.76 MHz ( period = 2.803 ns )                    ; vga_sync:inst2|current_h_count[8] ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.593 ns                ;
+; 17.197 ns                               ; 356.76 MHz ( period = 2.803 ns )                    ; vga_sync:inst2|current_h_count[8] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.593 ns                ;
+; 17.197 ns                               ; 356.76 MHz ( period = 2.803 ns )                    ; vga_sync:inst2|current_h_count[8] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.593 ns                ;
+; 17.197 ns                               ; 356.76 MHz ( period = 2.803 ns )                    ; vga_sync:inst2|current_h_count[8] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.593 ns                ;
+; 17.197 ns                               ; 356.76 MHz ( period = 2.803 ns )                    ; vga_sync:inst2|current_h_count[8] ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.593 ns                ;
+; 17.197 ns                               ; 356.76 MHz ( period = 2.803 ns )                    ; vga_sync:inst2|current_h_count[8] ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.593 ns                ;
+; 17.211 ns                               ; 358.55 MHz ( period = 2.789 ns )                    ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.579 ns                ;
+; 17.211 ns                               ; 358.55 MHz ( period = 2.789 ns )                    ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.579 ns                ;
+; 17.211 ns                               ; 358.55 MHz ( period = 2.789 ns )                    ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.579 ns                ;
+; 17.211 ns                               ; 358.55 MHz ( period = 2.789 ns )                    ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.579 ns                ;
+; 17.211 ns                               ; 358.55 MHz ( period = 2.789 ns )                    ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.579 ns                ;
+; 17.211 ns                               ; 358.55 MHz ( period = 2.789 ns )                    ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.579 ns                ;
+; 17.211 ns                               ; 358.55 MHz ( period = 2.789 ns )                    ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.579 ns                ;
+; 17.211 ns                               ; 358.55 MHz ( period = 2.789 ns )                    ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.579 ns                ;
+; 17.211 ns                               ; 358.55 MHz ( period = 2.789 ns )                    ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.579 ns                ;
+; 17.211 ns                               ; 358.55 MHz ( period = 2.789 ns )                    ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.579 ns                ;
+; 17.289 ns                               ; 368.87 MHz ( period = 2.711 ns )                    ; vga_sync:inst2|current_h_count[6] ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.497 ns                ;
+; 17.324 ns                               ; 373.69 MHz ( period = 2.676 ns )                    ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.466 ns                ;
+; 17.324 ns                               ; 373.69 MHz ( period = 2.676 ns )                    ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.466 ns                ;
+; 17.324 ns                               ; 373.69 MHz ( period = 2.676 ns )                    ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.466 ns                ;
+; 17.324 ns                               ; 373.69 MHz ( period = 2.676 ns )                    ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.466 ns                ;
+; 17.324 ns                               ; 373.69 MHz ( period = 2.676 ns )                    ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.466 ns                ;
+; 17.324 ns                               ; 373.69 MHz ( period = 2.676 ns )                    ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.466 ns                ;
+; 17.324 ns                               ; 373.69 MHz ( period = 2.676 ns )                    ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.466 ns                ;
+; 17.324 ns                               ; 373.69 MHz ( period = 2.676 ns )                    ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.466 ns                ;
+; 17.324 ns                               ; 373.69 MHz ( period = 2.676 ns )                    ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.466 ns                ;
+; 17.324 ns                               ; 373.69 MHz ( period = 2.676 ns )                    ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 20.000 ns                   ; 19.790 ns                 ; 2.466 ns                ;
+; 17.380 ns                               ; 381.68 MHz ( period = 2.620 ns )                    ; vga_sync:inst2|current_v_count[4] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.406 ns                ;
+; 17.398 ns                               ; 384.32 MHz ( period = 2.602 ns )                    ; vga_sync:inst2|current_h_count[7] ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.388 ns                ;
+; 17.400 ns                               ; 384.62 MHz ( period = 2.600 ns )                    ; vga_sync:inst2|current_v_count[1] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.386 ns                ;
+; 17.411 ns                               ; 386.25 MHz ( period = 2.589 ns )                    ; vga_sync:inst2|current_v_count[9] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.375 ns                ;
+; 17.452 ns                               ; 392.46 MHz ( period = 2.548 ns )                    ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.334 ns                ;
+; 17.466 ns                               ; 394.63 MHz ( period = 2.534 ns )                    ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.785 ns                 ; 2.319 ns                ;
+; 17.472 ns                               ; 395.57 MHz ( period = 2.528 ns )                    ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.314 ns                ;
+; 17.475 ns                               ; 396.04 MHz ( period = 2.525 ns )                    ; vga_sync:inst2|current_v_count[0] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.311 ns                ;
+; 17.476 ns                               ; 396.20 MHz ( period = 2.524 ns )                    ; vga_sync:inst2|current_h_count[8] ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.310 ns                ;
+; 17.486 ns                               ; 397.77 MHz ( period = 2.514 ns )                    ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.785 ns                 ; 2.299 ns                ;
+; 17.586 ns                               ; 414.25 MHz ( period = 2.414 ns )                    ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.200 ns                ;
+; 17.600 ns                               ; 416.67 MHz ( period = 2.400 ns )                    ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.785 ns                 ; 2.185 ns                ;
+; 17.606 ns                               ; 417.71 MHz ( period = 2.394 ns )                    ; vga_sync:inst2|current_v_count[4] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.180 ns                ;
+; 17.607 ns                               ; 417.89 MHz ( period = 2.393 ns )                    ; vga_sync:inst2|current_v_count[4] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.179 ns                ;
+; 17.610 ns                               ; 418.41 MHz ( period = 2.390 ns )                    ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.787 ns                 ; 2.177 ns                ;
+; 17.614 ns                               ; 419.11 MHz ( period = 2.386 ns )                    ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.172 ns                ;
+; 17.628 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.785 ns                 ; 2.157 ns                ;
+; 17.635 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[3] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.151 ns                ;
+; 17.637 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[9] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.149 ns                ;
+; 17.638 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[9] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.148 ns                ;
+; 17.643 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[2] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.143 ns                ;
+; 17.685 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[4] ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.101 ns                ;
+; 17.699 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[4] ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.785 ns                 ; 2.086 ns                ;
+; 17.700 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[1] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.086 ns                ;
+; 17.775 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[0] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.011 ns                ;
+; 17.782 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[5] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 2.004 ns                ;
+; 17.823 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.785 ns                 ; 1.962 ns                ;
+; 17.824 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[6] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.962 ns                ;
+; 17.842 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[9] ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 20.000 ns                   ; 19.782 ns                 ; 1.940 ns                ;
+; 17.861 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[3] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.925 ns                ;
+; 17.862 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[3] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.924 ns                ;
+; 17.863 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[1] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.923 ns                ;
+; 17.870 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.916 ns                ;
+; 17.874 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[7] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.912 ns                ;
+; 17.883 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[1] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.903 ns                ;
+; 17.899 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[8] ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.887 ns                ;
+; 17.917 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[6] ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.869 ns                ;
+; 17.931 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[4] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.855 ns                ;
+; 17.938 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[0] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.848 ns                ;
+; 17.943 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[2] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.843 ns                ;
+; 17.954 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[1] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.832 ns                ;
+; 17.958 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[0] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.828 ns                ;
+; 18.002 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[4] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.784 ns                ;
+; 18.006 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[7] ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 20.000 ns                   ; 19.782 ns                 ; 1.776 ns                ;
+; 18.006 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[6] ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 20.000 ns                   ; 19.782 ns                 ; 1.776 ns                ;
+; 18.007 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[1] ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 20.000 ns                   ; 19.782 ns                 ; 1.775 ns                ;
+; 18.008 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[5] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.778 ns                ;
+; 18.009 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[5] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.777 ns                ;
+; 18.025 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[1] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.761 ns                ;
+; 18.026 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[7] ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.760 ns                ;
+; 18.029 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[0] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.757 ns                ;
+; 18.039 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.747 ns                ;
+; 18.050 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[6] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.736 ns                ;
+; 18.051 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[6] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.735 ns                ;
+; 18.068 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.718 ns                ;
+; 18.073 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[4] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.713 ns                ;
+; 18.088 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.698 ns                ;
+; 18.094 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[7] ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.785 ns                 ; 1.691 ns                ;
+; 18.096 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[1] ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.690 ns                ;
+; 18.100 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[0] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.686 ns                ;
+; 18.100 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[7] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.686 ns                ;
+; 18.101 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[7] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.685 ns                ;
+; 18.125 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[8] ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.661 ns                ;
+; 18.126 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[2] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.660 ns                ;
+; 18.126 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[8] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.660 ns                ;
+; 18.127 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[0] ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 20.000 ns                   ; 19.782 ns                 ; 1.655 ns                ;
+; 18.134 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[9] ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.652 ns                ;
+; 18.139 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[0] ; vga_sync:inst2|current_h_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.647 ns                ;
+; 18.141 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[6] ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.785 ns                 ; 1.644 ns                ;
+; 18.144 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[4] ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.642 ns                ;
+; 18.147 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[2] ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.639 ns                ;
+; 18.159 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[1] ; vga_sync:inst2|current_h_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.627 ns                ;
+; 18.167 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[1] ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.619 ns                ;
+; 18.171 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[0] ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.615 ns                ;
+; 18.197 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[2] ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.589 ns                ;
+; 18.202 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.584 ns                ;
+; 18.226 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[5] ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.787 ns                 ; 1.561 ns                ;
+; 18.230 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[3] ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.556 ns                ;
+; 18.242 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[0] ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.544 ns                ;
+; 18.268 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[2] ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.518 ns                ;
+; 18.273 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[2] ; vga_sync:inst2|current_h_count[6] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.513 ns                ;
+; 18.285 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_v_count[3] ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 20.000 ns                   ; 19.786 ns                 ; 1.501 ns                ;
+; 18.286 ns                               ; Restricted to 420.17 MHz ( period = 2.38 ns )       ; vga_sync:inst2|current_h_count[8] ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 20.000 ns                   ; 19.785 ns                 ; 1.499 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                   ;                                   ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------+-----------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'Move'                                                                                                                                                                                        ;
++-------+----------------------------------+--------------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)             ; From                     ; To                       ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+----------------------------------+--------------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 215.98 MHz ( period = 4.630 ns ) ; Pos_Controler:inst1|x[2] ; Pos_Controler:inst1|x[9] ; Move       ; Move     ; None                        ; None                      ; 4.416 ns                ;
+; N/A   ; 217.63 MHz ( period = 4.595 ns ) ; Pos_Controler:inst1|x[3] ; Pos_Controler:inst1|x[9] ; Move       ; Move     ; None                        ; None                      ; 4.381 ns                ;
+; N/A   ; 220.51 MHz ( period = 4.535 ns ) ; Pos_Controler:inst1|x[2] ; Pos_Controler:inst1|x[8] ; Move       ; Move     ; None                        ; None                      ; 4.321 ns                ;
+; N/A   ; 220.51 MHz ( period = 4.535 ns ) ; Pos_Controler:inst1|x[2] ; Pos_Controler:inst1|x[5] ; Move       ; Move     ; None                        ; None                      ; 4.321 ns                ;
+; N/A   ; 220.51 MHz ( period = 4.535 ns ) ; Pos_Controler:inst1|x[2] ; Pos_Controler:inst1|x[3] ; Move       ; Move     ; None                        ; None                      ; 4.321 ns                ;
+; N/A   ; 220.51 MHz ( period = 4.535 ns ) ; Pos_Controler:inst1|x[2] ; Pos_Controler:inst1|x[6] ; Move       ; Move     ; None                        ; None                      ; 4.321 ns                ;
+; N/A   ; 220.51 MHz ( period = 4.535 ns ) ; Pos_Controler:inst1|x[2] ; Pos_Controler:inst1|x[2] ; Move       ; Move     ; None                        ; None                      ; 4.321 ns                ;
+; N/A   ; 220.51 MHz ( period = 4.535 ns ) ; Pos_Controler:inst1|x[2] ; Pos_Controler:inst1|x[4] ; Move       ; Move     ; None                        ; None                      ; 4.321 ns                ;
+; N/A   ; 220.51 MHz ( period = 4.535 ns ) ; Pos_Controler:inst1|x[2] ; Pos_Controler:inst1|x[7] ; Move       ; Move     ; None                        ; None                      ; 4.321 ns                ;
+; N/A   ; 220.51 MHz ( period = 4.535 ns ) ; Pos_Controler:inst1|x[2] ; Pos_Controler:inst1|x[1] ; Move       ; Move     ; None                        ; None                      ; 4.321 ns                ;
+; N/A   ; 222.22 MHz ( period = 4.500 ns ) ; Pos_Controler:inst1|x[3] ; Pos_Controler:inst1|x[8] ; Move       ; Move     ; None                        ; None                      ; 4.286 ns                ;
+; N/A   ; 222.22 MHz ( period = 4.500 ns ) ; Pos_Controler:inst1|x[3] ; Pos_Controler:inst1|x[5] ; Move       ; Move     ; None                        ; None                      ; 4.286 ns                ;
+; N/A   ; 222.22 MHz ( period = 4.500 ns ) ; Pos_Controler:inst1|x[3] ; Pos_Controler:inst1|x[3] ; Move       ; Move     ; None                        ; None                      ; 4.286 ns                ;
+; N/A   ; 222.22 MHz ( period = 4.500 ns ) ; Pos_Controler:inst1|x[3] ; Pos_Controler:inst1|x[6] ; Move       ; Move     ; None                        ; None                      ; 4.286 ns                ;
+; N/A   ; 222.22 MHz ( period = 4.500 ns ) ; Pos_Controler:inst1|x[3] ; Pos_Controler:inst1|x[2] ; Move       ; Move     ; None                        ; None                      ; 4.286 ns                ;
+; N/A   ; 222.22 MHz ( period = 4.500 ns ) ; Pos_Controler:inst1|x[3] ; Pos_Controler:inst1|x[4] ; Move       ; Move     ; None                        ; None                      ; 4.286 ns                ;
+; N/A   ; 222.22 MHz ( period = 4.500 ns ) ; Pos_Controler:inst1|x[3] ; Pos_Controler:inst1|x[7] ; Move       ; Move     ; None                        ; None                      ; 4.286 ns                ;
+; N/A   ; 222.22 MHz ( period = 4.500 ns ) ; Pos_Controler:inst1|x[3] ; Pos_Controler:inst1|x[1] ; Move       ; Move     ; None                        ; None                      ; 4.286 ns                ;
+; N/A   ; 223.61 MHz ( period = 4.472 ns ) ; Pos_Controler:inst1|x[1] ; Pos_Controler:inst1|x[9] ; Move       ; Move     ; None                        ; None                      ; 4.258 ns                ;
+; N/A   ; 228.47 MHz ( period = 4.377 ns ) ; Pos_Controler:inst1|x[1] ; Pos_Controler:inst1|x[8] ; Move       ; Move     ; None                        ; None                      ; 4.163 ns                ;
+; N/A   ; 228.47 MHz ( period = 4.377 ns ) ; Pos_Controler:inst1|x[1] ; Pos_Controler:inst1|x[5] ; Move       ; Move     ; None                        ; None                      ; 4.163 ns                ;
+; N/A   ; 228.47 MHz ( period = 4.377 ns ) ; Pos_Controler:inst1|x[1] ; Pos_Controler:inst1|x[3] ; Move       ; Move     ; None                        ; None                      ; 4.163 ns                ;
+; N/A   ; 228.47 MHz ( period = 4.377 ns ) ; Pos_Controler:inst1|x[1] ; Pos_Controler:inst1|x[6] ; Move       ; Move     ; None                        ; None                      ; 4.163 ns                ;
+; N/A   ; 228.47 MHz ( period = 4.377 ns ) ; Pos_Controler:inst1|x[1] ; Pos_Controler:inst1|x[2] ; Move       ; Move     ; None                        ; None                      ; 4.163 ns                ;
+; N/A   ; 228.47 MHz ( period = 4.377 ns ) ; Pos_Controler:inst1|x[1] ; Pos_Controler:inst1|x[4] ; Move       ; Move     ; None                        ; None                      ; 4.163 ns                ;
+; N/A   ; 228.47 MHz ( period = 4.377 ns ) ; Pos_Controler:inst1|x[1] ; Pos_Controler:inst1|x[7] ; Move       ; Move     ; None                        ; None                      ; 4.163 ns                ;
+; N/A   ; 228.47 MHz ( period = 4.377 ns ) ; Pos_Controler:inst1|x[1] ; Pos_Controler:inst1|x[1] ; Move       ; Move     ; None                        ; None                      ; 4.163 ns                ;
+; N/A   ; 231.80 MHz ( period = 4.314 ns ) ; Pos_Controler:inst1|x[4] ; Pos_Controler:inst1|x[9] ; Move       ; Move     ; None                        ; None                      ; 4.100 ns                ;
+; N/A   ; 237.02 MHz ( period = 4.219 ns ) ; Pos_Controler:inst1|x[4] ; Pos_Controler:inst1|x[8] ; Move       ; Move     ; None                        ; None                      ; 4.005 ns                ;
+; N/A   ; 237.02 MHz ( period = 4.219 ns ) ; Pos_Controler:inst1|x[4] ; Pos_Controler:inst1|x[5] ; Move       ; Move     ; None                        ; None                      ; 4.005 ns                ;
+; N/A   ; 237.02 MHz ( period = 4.219 ns ) ; Pos_Controler:inst1|x[4] ; Pos_Controler:inst1|x[3] ; Move       ; Move     ; None                        ; None                      ; 4.005 ns                ;
+; N/A   ; 237.02 MHz ( period = 4.219 ns ) ; Pos_Controler:inst1|x[4] ; Pos_Controler:inst1|x[6] ; Move       ; Move     ; None                        ; None                      ; 4.005 ns                ;
+; N/A   ; 237.02 MHz ( period = 4.219 ns ) ; Pos_Controler:inst1|x[4] ; Pos_Controler:inst1|x[2] ; Move       ; Move     ; None                        ; None                      ; 4.005 ns                ;
+; N/A   ; 237.02 MHz ( period = 4.219 ns ) ; Pos_Controler:inst1|x[4] ; Pos_Controler:inst1|x[4] ; Move       ; Move     ; None                        ; None                      ; 4.005 ns                ;
+; N/A   ; 237.02 MHz ( period = 4.219 ns ) ; Pos_Controler:inst1|x[4] ; Pos_Controler:inst1|x[7] ; Move       ; Move     ; None                        ; None                      ; 4.005 ns                ;
+; N/A   ; 237.02 MHz ( period = 4.219 ns ) ; Pos_Controler:inst1|x[4] ; Pos_Controler:inst1|x[1] ; Move       ; Move     ; None                        ; None                      ; 4.005 ns                ;
+; N/A   ; 247.04 MHz ( period = 4.048 ns ) ; Pos_Controler:inst1|y[2] ; Pos_Controler:inst1|y[9] ; Move       ; Move     ; None                        ; None                      ; 3.834 ns                ;
+; N/A   ; 249.94 MHz ( period = 4.001 ns ) ; Pos_Controler:inst1|y[1] ; Pos_Controler:inst1|y[9] ; Move       ; Move     ; None                        ; None                      ; 3.787 ns                ;
+; N/A   ; 251.45 MHz ( period = 3.977 ns ) ; Pos_Controler:inst1|y[2] ; Pos_Controler:inst1|y[8] ; Move       ; Move     ; None                        ; None                      ; 3.763 ns                ;
+; N/A   ; 252.78 MHz ( period = 3.956 ns ) ; Pos_Controler:inst1|y[2] ; Pos_Controler:inst1|y[2] ; Move       ; Move     ; None                        ; None                      ; 3.742 ns                ;
+; N/A   ; 252.78 MHz ( period = 3.956 ns ) ; Pos_Controler:inst1|y[2] ; Pos_Controler:inst1|y[3] ; Move       ; Move     ; None                        ; None                      ; 3.742 ns                ;
+; N/A   ; 252.78 MHz ( period = 3.956 ns ) ; Pos_Controler:inst1|y[2] ; Pos_Controler:inst1|y[7] ; Move       ; Move     ; None                        ; None                      ; 3.742 ns                ;
+; N/A   ; 252.78 MHz ( period = 3.956 ns ) ; Pos_Controler:inst1|y[2] ; Pos_Controler:inst1|y[5] ; Move       ; Move     ; None                        ; None                      ; 3.742 ns                ;
+; N/A   ; 252.78 MHz ( period = 3.956 ns ) ; Pos_Controler:inst1|y[2] ; Pos_Controler:inst1|y[6] ; Move       ; Move     ; None                        ; None                      ; 3.742 ns                ;
+; N/A   ; 252.78 MHz ( period = 3.956 ns ) ; Pos_Controler:inst1|y[2] ; Pos_Controler:inst1|y[4] ; Move       ; Move     ; None                        ; None                      ; 3.742 ns                ;
+; N/A   ; 252.78 MHz ( period = 3.956 ns ) ; Pos_Controler:inst1|y[2] ; Pos_Controler:inst1|y[1] ; Move       ; Move     ; None                        ; None                      ; 3.742 ns                ;
+; N/A   ; 254.26 MHz ( period = 3.933 ns ) ; Pos_Controler:inst1|y[4] ; Pos_Controler:inst1|y[9] ; Move       ; Move     ; None                        ; None                      ; 3.719 ns                ;
+; N/A   ; 254.45 MHz ( period = 3.930 ns ) ; Pos_Controler:inst1|y[1] ; Pos_Controler:inst1|y[8] ; Move       ; Move     ; None                        ; None                      ; 3.716 ns                ;
+; N/A   ; 255.82 MHz ( period = 3.909 ns ) ; Pos_Controler:inst1|y[1] ; Pos_Controler:inst1|y[2] ; Move       ; Move     ; None                        ; None                      ; 3.695 ns                ;
+; N/A   ; 255.82 MHz ( period = 3.909 ns ) ; Pos_Controler:inst1|y[1] ; Pos_Controler:inst1|y[3] ; Move       ; Move     ; None                        ; None                      ; 3.695 ns                ;
+; N/A   ; 255.82 MHz ( period = 3.909 ns ) ; Pos_Controler:inst1|y[1] ; Pos_Controler:inst1|y[7] ; Move       ; Move     ; None                        ; None                      ; 3.695 ns                ;
+; N/A   ; 255.82 MHz ( period = 3.909 ns ) ; Pos_Controler:inst1|y[1] ; Pos_Controler:inst1|y[5] ; Move       ; Move     ; None                        ; None                      ; 3.695 ns                ;
+; N/A   ; 255.82 MHz ( period = 3.909 ns ) ; Pos_Controler:inst1|y[1] ; Pos_Controler:inst1|y[6] ; Move       ; Move     ; None                        ; None                      ; 3.695 ns                ;
+; N/A   ; 255.82 MHz ( period = 3.909 ns ) ; Pos_Controler:inst1|y[1] ; Pos_Controler:inst1|y[4] ; Move       ; Move     ; None                        ; None                      ; 3.695 ns                ;
+; N/A   ; 255.82 MHz ( period = 3.909 ns ) ; Pos_Controler:inst1|y[1] ; Pos_Controler:inst1|y[1] ; Move       ; Move     ; None                        ; None                      ; 3.695 ns                ;
+; N/A   ; 258.93 MHz ( period = 3.862 ns ) ; Pos_Controler:inst1|y[4] ; Pos_Controler:inst1|y[8] ; Move       ; Move     ; None                        ; None                      ; 3.648 ns                ;
+; N/A   ; 260.35 MHz ( period = 3.841 ns ) ; Pos_Controler:inst1|y[4] ; Pos_Controler:inst1|y[2] ; Move       ; Move     ; None                        ; None                      ; 3.627 ns                ;
+; N/A   ; 260.35 MHz ( period = 3.841 ns ) ; Pos_Controler:inst1|y[4] ; Pos_Controler:inst1|y[3] ; Move       ; Move     ; None                        ; None                      ; 3.627 ns                ;
+; N/A   ; 260.35 MHz ( period = 3.841 ns ) ; Pos_Controler:inst1|y[4] ; Pos_Controler:inst1|y[7] ; Move       ; Move     ; None                        ; None                      ; 3.627 ns                ;
+; N/A   ; 260.35 MHz ( period = 3.841 ns ) ; Pos_Controler:inst1|y[4] ; Pos_Controler:inst1|y[5] ; Move       ; Move     ; None                        ; None                      ; 3.627 ns                ;
+; N/A   ; 260.35 MHz ( period = 3.841 ns ) ; Pos_Controler:inst1|y[4] ; Pos_Controler:inst1|y[6] ; Move       ; Move     ; None                        ; None                      ; 3.627 ns                ;
+; N/A   ; 260.35 MHz ( period = 3.841 ns ) ; Pos_Controler:inst1|y[4] ; Pos_Controler:inst1|y[4] ; Move       ; Move     ; None                        ; None                      ; 3.627 ns                ;
+; N/A   ; 260.35 MHz ( period = 3.841 ns ) ; Pos_Controler:inst1|y[4] ; Pos_Controler:inst1|y[1] ; Move       ; Move     ; None                        ; None                      ; 3.627 ns                ;
+; N/A   ; 260.42 MHz ( period = 3.840 ns ) ; Pos_Controler:inst1|y[7] ; Pos_Controler:inst1|y[9] ; Move       ; Move     ; None                        ; None                      ; 3.626 ns                ;
+; N/A   ; 265.32 MHz ( period = 3.769 ns ) ; Pos_Controler:inst1|y[7] ; Pos_Controler:inst1|y[8] ; Move       ; Move     ; None                        ; None                      ; 3.555 ns                ;
+; N/A   ; 266.81 MHz ( period = 3.748 ns ) ; Pos_Controler:inst1|y[7] ; Pos_Controler:inst1|y[2] ; Move       ; Move     ; None                        ; None                      ; 3.534 ns                ;
+; N/A   ; 266.81 MHz ( period = 3.748 ns ) ; Pos_Controler:inst1|y[7] ; Pos_Controler:inst1|y[3] ; Move       ; Move     ; None                        ; None                      ; 3.534 ns                ;
+; N/A   ; 266.81 MHz ( period = 3.748 ns ) ; Pos_Controler:inst1|y[7] ; Pos_Controler:inst1|y[7] ; Move       ; Move     ; None                        ; None                      ; 3.534 ns                ;
+; N/A   ; 266.81 MHz ( period = 3.748 ns ) ; Pos_Controler:inst1|y[7] ; Pos_Controler:inst1|y[5] ; Move       ; Move     ; None                        ; None                      ; 3.534 ns                ;
+; N/A   ; 266.81 MHz ( period = 3.748 ns ) ; Pos_Controler:inst1|y[7] ; Pos_Controler:inst1|y[6] ; Move       ; Move     ; None                        ; None                      ; 3.534 ns                ;
+; N/A   ; 266.81 MHz ( period = 3.748 ns ) ; Pos_Controler:inst1|y[7] ; Pos_Controler:inst1|y[4] ; Move       ; Move     ; None                        ; None                      ; 3.534 ns                ;
+; N/A   ; 266.81 MHz ( period = 3.748 ns ) ; Pos_Controler:inst1|y[7] ; Pos_Controler:inst1|y[1] ; Move       ; Move     ; None                        ; None                      ; 3.534 ns                ;
+; N/A   ; 270.20 MHz ( period = 3.701 ns ) ; Pos_Controler:inst1|y[3] ; Pos_Controler:inst1|y[9] ; Move       ; Move     ; None                        ; None                      ; 3.487 ns                ;
+; N/A   ; 275.48 MHz ( period = 3.630 ns ) ; Pos_Controler:inst1|y[3] ; Pos_Controler:inst1|y[8] ; Move       ; Move     ; None                        ; None                      ; 3.416 ns                ;
+; N/A   ; 277.09 MHz ( period = 3.609 ns ) ; Pos_Controler:inst1|y[3] ; Pos_Controler:inst1|y[2] ; Move       ; Move     ; None                        ; None                      ; 3.395 ns                ;
+; N/A   ; 277.09 MHz ( period = 3.609 ns ) ; Pos_Controler:inst1|y[3] ; Pos_Controler:inst1|y[3] ; Move       ; Move     ; None                        ; None                      ; 3.395 ns                ;
+; N/A   ; 277.09 MHz ( period = 3.609 ns ) ; Pos_Controler:inst1|y[3] ; Pos_Controler:inst1|y[7] ; Move       ; Move     ; None                        ; None                      ; 3.395 ns                ;
+; N/A   ; 277.09 MHz ( period = 3.609 ns ) ; Pos_Controler:inst1|y[3] ; Pos_Controler:inst1|y[5] ; Move       ; Move     ; None                        ; None                      ; 3.395 ns                ;
+; N/A   ; 277.09 MHz ( period = 3.609 ns ) ; Pos_Controler:inst1|y[3] ; Pos_Controler:inst1|y[6] ; Move       ; Move     ; None                        ; None                      ; 3.395 ns                ;
+; N/A   ; 277.09 MHz ( period = 3.609 ns ) ; Pos_Controler:inst1|y[3] ; Pos_Controler:inst1|y[4] ; Move       ; Move     ; None                        ; None                      ; 3.395 ns                ;
+; N/A   ; 277.09 MHz ( period = 3.609 ns ) ; Pos_Controler:inst1|y[3] ; Pos_Controler:inst1|y[1] ; Move       ; Move     ; None                        ; None                      ; 3.395 ns                ;
+; N/A   ; 278.63 MHz ( period = 3.589 ns ) ; Pos_Controler:inst1|y[5] ; Pos_Controler:inst1|y[9] ; Move       ; Move     ; None                        ; None                      ; 3.375 ns                ;
+; N/A   ; 284.25 MHz ( period = 3.518 ns ) ; Pos_Controler:inst1|y[5] ; Pos_Controler:inst1|y[8] ; Move       ; Move     ; None                        ; None                      ; 3.304 ns                ;
+; N/A   ; 285.96 MHz ( period = 3.497 ns ) ; Pos_Controler:inst1|y[5] ; Pos_Controler:inst1|y[2] ; Move       ; Move     ; None                        ; None                      ; 3.283 ns                ;
+; N/A   ; 285.96 MHz ( period = 3.497 ns ) ; Pos_Controler:inst1|y[5] ; Pos_Controler:inst1|y[3] ; Move       ; Move     ; None                        ; None                      ; 3.283 ns                ;
+; N/A   ; 285.96 MHz ( period = 3.497 ns ) ; Pos_Controler:inst1|y[5] ; Pos_Controler:inst1|y[7] ; Move       ; Move     ; None                        ; None                      ; 3.283 ns                ;
+; N/A   ; 285.96 MHz ( period = 3.497 ns ) ; Pos_Controler:inst1|y[5] ; Pos_Controler:inst1|y[5] ; Move       ; Move     ; None                        ; None                      ; 3.283 ns                ;
+; N/A   ; 285.96 MHz ( period = 3.497 ns ) ; Pos_Controler:inst1|y[5] ; Pos_Controler:inst1|y[6] ; Move       ; Move     ; None                        ; None                      ; 3.283 ns                ;
+; N/A   ; 285.96 MHz ( period = 3.497 ns ) ; Pos_Controler:inst1|y[5] ; Pos_Controler:inst1|y[4] ; Move       ; Move     ; None                        ; None                      ; 3.283 ns                ;
+; N/A   ; 285.96 MHz ( period = 3.497 ns ) ; Pos_Controler:inst1|y[5] ; Pos_Controler:inst1|y[1] ; Move       ; Move     ; None                        ; None                      ; 3.283 ns                ;
+; N/A   ; 290.70 MHz ( period = 3.440 ns ) ; Pos_Controler:inst1|y[6] ; Pos_Controler:inst1|y[9] ; Move       ; Move     ; None                        ; None                      ; 3.226 ns                ;
+; N/A   ; 296.82 MHz ( period = 3.369 ns ) ; Pos_Controler:inst1|y[6] ; Pos_Controler:inst1|y[8] ; Move       ; Move     ; None                        ; None                      ; 3.155 ns                ;
+; N/A   ; 298.15 MHz ( period = 3.354 ns ) ; Pos_Controler:inst1|x[5] ; Pos_Controler:inst1|x[9] ; Move       ; Move     ; None                        ; None                      ; 3.140 ns                ;
+; N/A   ; 298.15 MHz ( period = 3.354 ns ) ; Pos_Controler:inst1|x[5] ; Pos_Controler:inst1|x[8] ; Move       ; Move     ; None                        ; None                      ; 3.140 ns                ;
+; N/A   ; 298.15 MHz ( period = 3.354 ns ) ; Pos_Controler:inst1|x[5] ; Pos_Controler:inst1|x[5] ; Move       ; Move     ; None                        ; None                      ; 3.140 ns                ;
+; N/A   ; 298.15 MHz ( period = 3.354 ns ) ; Pos_Controler:inst1|x[5] ; Pos_Controler:inst1|x[3] ; Move       ; Move     ; None                        ; None                      ; 3.140 ns                ;
+; N/A   ; 298.15 MHz ( period = 3.354 ns ) ; Pos_Controler:inst1|x[5] ; Pos_Controler:inst1|x[6] ; Move       ; Move     ; None                        ; None                      ; 3.140 ns                ;
+; N/A   ; 298.15 MHz ( period = 3.354 ns ) ; Pos_Controler:inst1|x[5] ; Pos_Controler:inst1|x[2] ; Move       ; Move     ; None                        ; None                      ; 3.140 ns                ;
+; N/A   ; 298.15 MHz ( period = 3.354 ns ) ; Pos_Controler:inst1|x[5] ; Pos_Controler:inst1|x[4] ; Move       ; Move     ; None                        ; None                      ; 3.140 ns                ;
+; N/A   ; 298.15 MHz ( period = 3.354 ns ) ; Pos_Controler:inst1|x[5] ; Pos_Controler:inst1|x[7] ; Move       ; Move     ; None                        ; None                      ; 3.140 ns                ;
+; N/A   ; 298.15 MHz ( period = 3.354 ns ) ; Pos_Controler:inst1|x[5] ; Pos_Controler:inst1|x[1] ; Move       ; Move     ; None                        ; None                      ; 3.140 ns                ;
+; N/A   ; 298.69 MHz ( period = 3.348 ns ) ; Pos_Controler:inst1|y[6] ; Pos_Controler:inst1|y[2] ; Move       ; Move     ; None                        ; None                      ; 3.134 ns                ;
+; N/A   ; 298.69 MHz ( period = 3.348 ns ) ; Pos_Controler:inst1|y[6] ; Pos_Controler:inst1|y[3] ; Move       ; Move     ; None                        ; None                      ; 3.134 ns                ;
+; N/A   ; 298.69 MHz ( period = 3.348 ns ) ; Pos_Controler:inst1|y[6] ; Pos_Controler:inst1|y[7] ; Move       ; Move     ; None                        ; None                      ; 3.134 ns                ;
+; N/A   ; 298.69 MHz ( period = 3.348 ns ) ; Pos_Controler:inst1|y[6] ; Pos_Controler:inst1|y[5] ; Move       ; Move     ; None                        ; None                      ; 3.134 ns                ;
+; N/A   ; 298.69 MHz ( period = 3.348 ns ) ; Pos_Controler:inst1|y[6] ; Pos_Controler:inst1|y[6] ; Move       ; Move     ; None                        ; None                      ; 3.134 ns                ;
+; N/A   ; 298.69 MHz ( period = 3.348 ns ) ; Pos_Controler:inst1|y[6] ; Pos_Controler:inst1|y[4] ; Move       ; Move     ; None                        ; None                      ; 3.134 ns                ;
+; N/A   ; 298.69 MHz ( period = 3.348 ns ) ; Pos_Controler:inst1|y[6] ; Pos_Controler:inst1|y[1] ; Move       ; Move     ; None                        ; None                      ; 3.134 ns                ;
+; N/A   ; 307.98 MHz ( period = 3.247 ns ) ; Pos_Controler:inst1|x[6] ; Pos_Controler:inst1|x[9] ; Move       ; Move     ; None                        ; None                      ; 3.033 ns                ;
+; N/A   ; 307.98 MHz ( period = 3.247 ns ) ; Pos_Controler:inst1|x[6] ; Pos_Controler:inst1|x[8] ; Move       ; Move     ; None                        ; None                      ; 3.033 ns                ;
+; N/A   ; 307.98 MHz ( period = 3.247 ns ) ; Pos_Controler:inst1|x[6] ; Pos_Controler:inst1|x[5] ; Move       ; Move     ; None                        ; None                      ; 3.033 ns                ;
+; N/A   ; 307.98 MHz ( period = 3.247 ns ) ; Pos_Controler:inst1|x[6] ; Pos_Controler:inst1|x[3] ; Move       ; Move     ; None                        ; None                      ; 3.033 ns                ;
+; N/A   ; 307.98 MHz ( period = 3.247 ns ) ; Pos_Controler:inst1|x[6] ; Pos_Controler:inst1|x[6] ; Move       ; Move     ; None                        ; None                      ; 3.033 ns                ;
+; N/A   ; 307.98 MHz ( period = 3.247 ns ) ; Pos_Controler:inst1|x[6] ; Pos_Controler:inst1|x[2] ; Move       ; Move     ; None                        ; None                      ; 3.033 ns                ;
+; N/A   ; 307.98 MHz ( period = 3.247 ns ) ; Pos_Controler:inst1|x[6] ; Pos_Controler:inst1|x[4] ; Move       ; Move     ; None                        ; None                      ; 3.033 ns                ;
+; N/A   ; 307.98 MHz ( period = 3.247 ns ) ; Pos_Controler:inst1|x[6] ; Pos_Controler:inst1|x[7] ; Move       ; Move     ; None                        ; None                      ; 3.033 ns                ;
+; N/A   ; 307.98 MHz ( period = 3.247 ns ) ; Pos_Controler:inst1|x[6] ; Pos_Controler:inst1|x[1] ; Move       ; Move     ; None                        ; None                      ; 3.033 ns                ;
+; N/A   ; 352.73 MHz ( period = 2.835 ns ) ; Pos_Controler:inst1|x[7] ; Pos_Controler:inst1|x[9] ; Move       ; Move     ; None                        ; None                      ; 2.621 ns                ;
+; N/A   ; 358.94 MHz ( period = 2.786 ns ) ; Pos_Controler:inst1|y[9] ; Pos_Controler:inst1|y[9] ; Move       ; Move     ; None                        ; None                      ; 2.572 ns                ;
+; N/A   ; 358.94 MHz ( period = 2.786 ns ) ; Pos_Controler:inst1|y[9] ; Pos_Controler:inst1|y[8] ; Move       ; Move     ; None                        ; None                      ; 2.572 ns                ;
+; N/A   ; 358.94 MHz ( period = 2.786 ns ) ; Pos_Controler:inst1|y[9] ; Pos_Controler:inst1|y[2] ; Move       ; Move     ; None                        ; None                      ; 2.572 ns                ;
+; N/A   ; 358.94 MHz ( period = 2.786 ns ) ; Pos_Controler:inst1|y[9] ; Pos_Controler:inst1|y[3] ; Move       ; Move     ; None                        ; None                      ; 2.572 ns                ;
+; N/A   ; 358.94 MHz ( period = 2.786 ns ) ; Pos_Controler:inst1|y[9] ; Pos_Controler:inst1|y[7] ; Move       ; Move     ; None                        ; None                      ; 2.572 ns                ;
+; N/A   ; 358.94 MHz ( period = 2.786 ns ) ; Pos_Controler:inst1|y[9] ; Pos_Controler:inst1|y[5] ; Move       ; Move     ; None                        ; None                      ; 2.572 ns                ;
+; N/A   ; 358.94 MHz ( period = 2.786 ns ) ; Pos_Controler:inst1|y[9] ; Pos_Controler:inst1|y[6] ; Move       ; Move     ; None                        ; None                      ; 2.572 ns                ;
+; N/A   ; 358.94 MHz ( period = 2.786 ns ) ; Pos_Controler:inst1|y[9] ; Pos_Controler:inst1|y[4] ; Move       ; Move     ; None                        ; None                      ; 2.572 ns                ;
+; N/A   ; 358.94 MHz ( period = 2.786 ns ) ; Pos_Controler:inst1|y[9] ; Pos_Controler:inst1|y[1] ; Move       ; Move     ; None                        ; None                      ; 2.572 ns                ;
+; N/A   ; 364.96 MHz ( period = 2.740 ns ) ; Pos_Controler:inst1|x[7] ; Pos_Controler:inst1|x[8] ; Move       ; Move     ; None                        ; None                      ; 2.526 ns                ;
+; N/A   ; 364.96 MHz ( period = 2.740 ns ) ; Pos_Controler:inst1|x[7] ; Pos_Controler:inst1|x[5] ; Move       ; Move     ; None                        ; None                      ; 2.526 ns                ;
+; N/A   ; 364.96 MHz ( period = 2.740 ns ) ; Pos_Controler:inst1|x[7] ; Pos_Controler:inst1|x[3] ; Move       ; Move     ; None                        ; None                      ; 2.526 ns                ;
+; N/A   ; 364.96 MHz ( period = 2.740 ns ) ; Pos_Controler:inst1|x[7] ; Pos_Controler:inst1|x[6] ; Move       ; Move     ; None                        ; None                      ; 2.526 ns                ;
+; N/A   ; 364.96 MHz ( period = 2.740 ns ) ; Pos_Controler:inst1|x[7] ; Pos_Controler:inst1|x[2] ; Move       ; Move     ; None                        ; None                      ; 2.526 ns                ;
+; N/A   ; 364.96 MHz ( period = 2.740 ns ) ; Pos_Controler:inst1|x[7] ; Pos_Controler:inst1|x[4] ; Move       ; Move     ; None                        ; None                      ; 2.526 ns                ;
+; N/A   ; 364.96 MHz ( period = 2.740 ns ) ; Pos_Controler:inst1|x[7] ; Pos_Controler:inst1|x[7] ; Move       ; Move     ; None                        ; None                      ; 2.526 ns                ;
+; N/A   ; 364.96 MHz ( period = 2.740 ns ) ; Pos_Controler:inst1|x[7] ; Pos_Controler:inst1|x[1] ; Move       ; Move     ; None                        ; None                      ; 2.526 ns                ;
+; N/A   ; 374.39 MHz ( period = 2.671 ns ) ; Pos_Controler:inst1|x[9] ; Pos_Controler:inst1|x[9] ; Move       ; Move     ; None                        ; None                      ; 2.457 ns                ;
+; N/A   ; 380.52 MHz ( period = 2.628 ns ) ; Pos_Controler:inst1|y[8] ; Pos_Controler:inst1|y[9] ; Move       ; Move     ; None                        ; None                      ; 2.414 ns                ;
+; N/A   ; 380.52 MHz ( period = 2.628 ns ) ; Pos_Controler:inst1|y[8] ; Pos_Controler:inst1|y[8] ; Move       ; Move     ; None                        ; None                      ; 2.414 ns                ;
+; N/A   ; 380.52 MHz ( period = 2.628 ns ) ; Pos_Controler:inst1|y[8] ; Pos_Controler:inst1|y[2] ; Move       ; Move     ; None                        ; None                      ; 2.414 ns                ;
+; N/A   ; 380.52 MHz ( period = 2.628 ns ) ; Pos_Controler:inst1|y[8] ; Pos_Controler:inst1|y[3] ; Move       ; Move     ; None                        ; None                      ; 2.414 ns                ;
+; N/A   ; 380.52 MHz ( period = 2.628 ns ) ; Pos_Controler:inst1|y[8] ; Pos_Controler:inst1|y[7] ; Move       ; Move     ; None                        ; None                      ; 2.414 ns                ;
+; N/A   ; 380.52 MHz ( period = 2.628 ns ) ; Pos_Controler:inst1|y[8] ; Pos_Controler:inst1|y[5] ; Move       ; Move     ; None                        ; None                      ; 2.414 ns                ;
+; N/A   ; 380.52 MHz ( period = 2.628 ns ) ; Pos_Controler:inst1|y[8] ; Pos_Controler:inst1|y[6] ; Move       ; Move     ; None                        ; None                      ; 2.414 ns                ;
+; N/A   ; 380.52 MHz ( period = 2.628 ns ) ; Pos_Controler:inst1|y[8] ; Pos_Controler:inst1|y[4] ; Move       ; Move     ; None                        ; None                      ; 2.414 ns                ;
+; N/A   ; 380.52 MHz ( period = 2.628 ns ) ; Pos_Controler:inst1|y[8] ; Pos_Controler:inst1|y[1] ; Move       ; Move     ; None                        ; None                      ; 2.414 ns                ;
+; N/A   ; 388.20 MHz ( period = 2.576 ns ) ; Pos_Controler:inst1|x[9] ; Pos_Controler:inst1|x[8] ; Move       ; Move     ; None                        ; None                      ; 2.362 ns                ;
+; N/A   ; 388.20 MHz ( period = 2.576 ns ) ; Pos_Controler:inst1|x[9] ; Pos_Controler:inst1|x[5] ; Move       ; Move     ; None                        ; None                      ; 2.362 ns                ;
+; N/A   ; 388.20 MHz ( period = 2.576 ns ) ; Pos_Controler:inst1|x[9] ; Pos_Controler:inst1|x[3] ; Move       ; Move     ; None                        ; None                      ; 2.362 ns                ;
+; N/A   ; 388.20 MHz ( period = 2.576 ns ) ; Pos_Controler:inst1|x[9] ; Pos_Controler:inst1|x[6] ; Move       ; Move     ; None                        ; None                      ; 2.362 ns                ;
+; N/A   ; 388.20 MHz ( period = 2.576 ns ) ; Pos_Controler:inst1|x[9] ; Pos_Controler:inst1|x[2] ; Move       ; Move     ; None                        ; None                      ; 2.362 ns                ;
+; N/A   ; 388.20 MHz ( period = 2.576 ns ) ; Pos_Controler:inst1|x[9] ; Pos_Controler:inst1|x[4] ; Move       ; Move     ; None                        ; None                      ; 2.362 ns                ;
+; N/A   ; 388.20 MHz ( period = 2.576 ns ) ; Pos_Controler:inst1|x[9] ; Pos_Controler:inst1|x[7] ; Move       ; Move     ; None                        ; None                      ; 2.362 ns                ;
+; N/A   ; 388.20 MHz ( period = 2.576 ns ) ; Pos_Controler:inst1|x[9] ; Pos_Controler:inst1|x[1] ; Move       ; Move     ; None                        ; None                      ; 2.362 ns                ;
+; N/A   ; 394.32 MHz ( period = 2.536 ns ) ; Pos_Controler:inst1|x[8] ; Pos_Controler:inst1|x[9] ; Move       ; Move     ; None                        ; None                      ; 2.322 ns                ;
+; N/A   ; 409.67 MHz ( period = 2.441 ns ) ; Pos_Controler:inst1|x[8] ; Pos_Controler:inst1|x[8] ; Move       ; Move     ; None                        ; None                      ; 2.227 ns                ;
+; N/A   ; 409.67 MHz ( period = 2.441 ns ) ; Pos_Controler:inst1|x[8] ; Pos_Controler:inst1|x[5] ; Move       ; Move     ; None                        ; None                      ; 2.227 ns                ;
+; N/A   ; 409.67 MHz ( period = 2.441 ns ) ; Pos_Controler:inst1|x[8] ; Pos_Controler:inst1|x[3] ; Move       ; Move     ; None                        ; None                      ; 2.227 ns                ;
+; N/A   ; 409.67 MHz ( period = 2.441 ns ) ; Pos_Controler:inst1|x[8] ; Pos_Controler:inst1|x[6] ; Move       ; Move     ; None                        ; None                      ; 2.227 ns                ;
+; N/A   ; 409.67 MHz ( period = 2.441 ns ) ; Pos_Controler:inst1|x[8] ; Pos_Controler:inst1|x[2] ; Move       ; Move     ; None                        ; None                      ; 2.227 ns                ;
+; N/A   ; 409.67 MHz ( period = 2.441 ns ) ; Pos_Controler:inst1|x[8] ; Pos_Controler:inst1|x[4] ; Move       ; Move     ; None                        ; None                      ; 2.227 ns                ;
+; N/A   ; 409.67 MHz ( period = 2.441 ns ) ; Pos_Controler:inst1|x[8] ; Pos_Controler:inst1|x[7] ; Move       ; Move     ; None                        ; None                      ; 2.227 ns                ;
+; N/A   ; 409.67 MHz ( period = 2.441 ns ) ; Pos_Controler:inst1|x[8] ; Pos_Controler:inst1|x[1] ; Move       ; Move     ; None                        ; None                      ; 2.227 ns                ;
++-------+----------------------------------+--------------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'clk'                                                                                                                                                                                                                              ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                           ; From                                                ; To                                ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; 0.391 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_mod2       ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.407 ns                 ;
+; 0.736 ns                                ; vga_sync:inst2|current_v_count[4]                   ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.012 ns                   ; 0.748 ns                 ;
+; 0.777 ns                                ; vga_sync:inst2|current_h_count[5]                   ; vga_sync:inst2|current_h_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.793 ns                 ;
+; 0.805 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_h_count[0] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.821 ns                 ;
+; 0.813 ns                                ; vga_sync:inst2|current_v_count[6]                   ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.829 ns                 ;
+; 0.813 ns                                ; vga_sync:inst2|current_h_count[2]                   ; vga_sync:inst2|current_h_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.829 ns                 ;
+; 0.816 ns                                ; vga_sync:inst2|current_h_count[7]                   ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.832 ns                 ;
+; 0.819 ns                                ; vga_sync:inst2|current_v_count[8]                   ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.835 ns                 ;
+; 0.841 ns                                ; vga_sync:inst2|current_v_count[0]                   ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.857 ns                 ;
+; 0.842 ns                                ; vga_sync:inst2|current_v_count[7]                   ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.858 ns                 ;
+; 0.844 ns                                ; vga_sync:inst2|current_v_count[5]                   ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.860 ns                 ;
+; 0.851 ns                                ; vga_sync:inst2|current_h_count[6]                   ; vga_sync:inst2|current_h_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.867 ns                 ;
+; 0.853 ns                                ; vga_sync:inst2|current_h_count[4]                   ; vga_sync:inst2|current_h_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.869 ns                 ;
+; 0.853 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_h_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.869 ns                 ;
+; 0.853 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_h_count[1] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.869 ns                 ;
+; 0.864 ns                                ; vga_sync:inst2|current_h_count[4]                   ; vga_sync:inst2|current_h_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 0.879 ns                 ;
+; 0.934 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.950 ns                 ;
+; 0.945 ns                                ; vga_sync:inst2|current_v_count[9]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.961 ns                 ;
+; 0.952 ns                                ; vga_sync:inst2|current_v_count[0]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.968 ns                 ;
+; 0.953 ns                                ; vga_sync:inst2|current_v_count[0]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.969 ns                 ;
+; 0.961 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.977 ns                 ;
+; 0.965 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 0.981 ns                 ;
+; 0.990 ns                                ; vga_sync:inst2|current_v_count[1]                   ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.006 ns                 ;
+; 1.036 ns                                ; vga_sync:inst2|current_h_count[6]                   ; vga_sync:inst2|current_h_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 1.051 ns                 ;
+; 1.074 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.090 ns                 ;
+; 1.078 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.094 ns                 ;
+; 1.089 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.105 ns                 ;
+; 1.122 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.017 ns                   ; 1.139 ns                 ;
+; 1.122 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_h_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.017 ns                   ; 1.139 ns                 ;
+; 1.122 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.017 ns                   ; 1.139 ns                 ;
+; 1.122 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.017 ns                   ; 1.139 ns                 ;
+; 1.122 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_h_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.017 ns                   ; 1.139 ns                 ;
+; 1.122 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_h_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.017 ns                   ; 1.139 ns                 ;
+; 1.122 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_h_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.017 ns                   ; 1.139 ns                 ;
+; 1.122 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_h_count[0] ; clk        ; clk      ; 0.000 ns                   ; 0.017 ns                   ; 1.139 ns                 ;
+; 1.122 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_h_count[1] ; clk        ; clk      ; 0.000 ns                   ; 0.017 ns                   ; 1.139 ns                 ;
+; 1.129 ns                                ; vga_sync:inst2|current_h_count[7]                   ; vga_sync:inst2|current_h_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 1.144 ns                 ;
+; 1.148 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 1.163 ns                 ;
+; 1.179 ns                                ; vga_sync:inst2|current_v_count[0]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.195 ns                 ;
+; 1.188 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_h_count[1] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.204 ns                 ;
+; 1.196 ns                                ; vga_sync:inst2|current_v_count[6]                   ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.212 ns                 ;
+; 1.196 ns                                ; vga_sync:inst2|current_h_count[2]                   ; vga_sync:inst2|current_h_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.212 ns                 ;
+; 1.201 ns                                ; vga_sync:inst2|current_v_count[3]                   ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.217 ns                 ;
+; 1.225 ns                                ; vga_sync:inst2|current_v_count[3]                   ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.012 ns                   ; 1.237 ns                 ;
+; 1.227 ns                                ; vga_sync:inst2|current_v_count[0]                   ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.243 ns                 ;
+; 1.228 ns                                ; vga_sync:inst2|current_v_count[7]                   ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.244 ns                 ;
+; 1.230 ns                                ; vga_sync:inst2|current_v_count[5]                   ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.246 ns                 ;
+; 1.234 ns                                ; vga_sync:inst2|current_h_count[6]                   ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.250 ns                 ;
+; 1.237 ns                                ; vga_sync:inst2|current_h_count[6]                   ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.253 ns                 ;
+; 1.238 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.254 ns                 ;
+; 1.239 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_h_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.255 ns                 ;
+; 1.239 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_h_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.255 ns                 ;
+; 1.240 ns                                ; vga_sync:inst2|current_v_count[4]                   ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.256 ns                 ;
+; 1.245 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.261 ns                 ;
+; 1.259 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_h_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.275 ns                 ;
+; 1.261 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 1.276 ns                 ;
+; 1.264 ns                                ; vga_sync:inst2|current_v_count[5]                   ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.012 ns                   ; 1.276 ns                 ;
+; 1.267 ns                                ; vga_sync:inst2|current_v_count[6]                   ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.283 ns                 ;
+; 1.267 ns                                ; vga_sync:inst2|current_h_count[2]                   ; vga_sync:inst2|current_h_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.283 ns                 ;
+; 1.268 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.284 ns                 ;
+; 1.272 ns                                ; vga_sync:inst2|current_v_count[3]                   ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.288 ns                 ;
+; 1.292 ns                                ; vga_sync:inst2|current_h_count[9]                   ; vga_sync:inst2|current_h_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 1.307 ns                 ;
+; 1.301 ns                                ; vga_sync:inst2|current_v_count[5]                   ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.317 ns                 ;
+; 1.310 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_h_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.326 ns                 ;
+; 1.330 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_h_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.346 ns                 ;
+; 1.343 ns                                ; vga_sync:inst2|current_v_count[3]                   ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.359 ns                 ;
+; 1.348 ns                                ; vga_sync:inst2|current_v_count[2]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.364 ns                 ;
+; 1.356 ns                                ; vga_sync:inst2|current_v_count[3]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.372 ns                 ;
+; 1.358 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_h_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 1.373 ns                 ;
+; 1.360 ns                                ; vga_sync:inst2|current_v_count[2]                   ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.376 ns                 ;
+; 1.363 ns                                ; vga_sync:inst2|current_h_count[2]                   ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.379 ns                 ;
+; 1.370 ns                                ; vga_sync:inst2|current_h_count[2]                   ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.386 ns                 ;
+; 1.372 ns                                ; vga_sync:inst2|current_v_count[5]                   ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.388 ns                 ;
+; 1.380 ns                                ; vga_sync:inst2|current_v_count[1]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.396 ns                 ;
+; 1.381 ns                                ; vga_sync:inst2|current_v_count[1]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.397 ns                 ;
+; 1.381 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_h_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.397 ns                 ;
+; 1.385 ns                                ; vga_sync:inst2|current_v_count[2]                   ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.012 ns                   ; 1.397 ns                 ;
+; 1.394 ns                                ; vga_sync:inst2|current_v_count[8]                   ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.012 ns                   ; 1.406 ns                 ;
+; 1.398 ns                                ; vga_sync:inst2|current_h_count[4]                   ; vga_sync:inst2|current_h_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.414 ns                 ;
+; 1.401 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_h_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.417 ns                 ;
+; 1.413 ns                                ; vga_sync:inst2|current_h_count[6]                   ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.429 ns                 ;
+; 1.414 ns                                ; vga_sync:inst2|current_v_count[3]                   ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.430 ns                 ;
+; 1.431 ns                                ; vga_sync:inst2|current_v_count[2]                   ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.447 ns                 ;
+; 1.449 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 1.464 ns                 ;
+; 1.465 ns                                ; vga_sync:inst2|current_h_count[7]                   ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.481 ns                 ;
+; 1.469 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_h_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.485 ns                 ;
+; 1.469 ns                                ; vga_sync:inst2|current_h_count[4]                   ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.485 ns                 ;
+; 1.472 ns                                ; vga_sync:inst2|current_h_count[7]                   ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.488 ns                 ;
+; 1.473 ns                                ; vga_sync:inst2|current_h_count[5]                   ; vga_sync:inst2|current_h_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.017 ns                   ; 1.490 ns                 ;
+; 1.484 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 1.499 ns                 ;
+; 1.485 ns                                ; vga_sync:inst2|current_v_count[3]                   ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.501 ns                 ;
+; 1.497 ns                                ; vga_sync:inst2|current_h_count[2]                   ; vga_sync:inst2|current_h_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.513 ns                 ;
+; 1.502 ns                                ; vga_sync:inst2|current_v_count[2]                   ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.518 ns                 ;
+; 1.505 ns                                ; vga_sync:inst2|current_h_count[5]                   ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.017 ns                   ; 1.522 ns                 ;
+; 1.522 ns                                ; vga_sync:inst2|current_h_count[4]                   ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.538 ns                 ;
+; 1.528 ns                                ; vga_sync:inst2|current_v_count[0]                   ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.544 ns                 ;
+; 1.529 ns                                ; vga_sync:inst2|current_h_count[4]                   ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.545 ns                 ;
+; 1.540 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.556 ns                 ;
+; 1.544 ns                                ; vga_sync:inst2|current_h_count[5]                   ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.017 ns                   ; 1.561 ns                 ;
+; 1.552 ns                                ; vga_sync:inst2|current_h_count[9]                   ; vga_sync:inst2|current_h_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.568 ns                 ;
+; 1.568 ns                                ; vga_sync:inst2|current_h_count[2]                   ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.584 ns                 ;
+; 1.573 ns                                ; vga_sync:inst2|current_v_count[2]                   ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.589 ns                 ;
+; 1.574 ns                                ; vga_sync:inst2|current_h_count[2]                   ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 1.589 ns                 ;
+; 1.599 ns                                ; vga_sync:inst2|current_v_count[0]                   ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.615 ns                 ;
+; 1.603 ns                                ; vga_sync:inst2|current_v_count[1]                   ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.619 ns                 ;
+; 1.607 ns                                ; vga_sync:inst2|current_v_count[1]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.623 ns                 ;
+; 1.611 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_h_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.627 ns                 ;
+; 1.614 ns                                ; vga_sync:inst2|current_v_count[8]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.630 ns                 ;
+; 1.624 ns                                ; vga_sync:inst2|current_v_count[2]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.640 ns                 ;
+; 1.626 ns                                ; vga_sync:inst2|current_v_count[4]                   ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.642 ns                 ;
+; 1.629 ns                                ; vga_sync:inst2|current_h_count[6]                   ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 1.644 ns                 ;
+; 1.631 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_h_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.647 ns                 ;
+; 1.643 ns                                ; vga_sync:inst2|current_v_count[0]                   ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.012 ns                   ; 1.655 ns                 ;
+; 1.644 ns                                ; vga_sync:inst2|current_v_count[2]                   ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.660 ns                 ;
+; 1.644 ns                                ; vga_sync:inst2|current_v_count[8]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.660 ns                 ;
+; 1.645 ns                                ; vga_sync:inst2|current_v_count[8]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.661 ns                 ;
+; 1.669 ns                                ; vga_sync:inst2|current_v_count[7]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.685 ns                 ;
+; 1.670 ns                                ; vga_sync:inst2|current_v_count[0]                   ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.686 ns                 ;
+; 1.670 ns                                ; vga_sync:inst2|current_v_count[7]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.686 ns                 ;
+; 1.674 ns                                ; vga_sync:inst2|current_v_count[1]                   ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.690 ns                 ;
+; 1.676 ns                                ; vga_sync:inst2|current_h_count[7]                   ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 1.691 ns                 ;
+; 1.682 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.698 ns                 ;
+; 1.684 ns                                ; vga_sync:inst2|current_h_count[5]                   ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.017 ns                   ; 1.701 ns                 ;
+; 1.697 ns                                ; vga_sync:inst2|current_v_count[4]                   ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.713 ns                 ;
+; 1.702 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_h_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.718 ns                 ;
+; 1.711 ns                                ; vga_sync:inst2|current_v_count[7]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.727 ns                 ;
+; 1.719 ns                                ; vga_sync:inst2|current_v_count[6]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.735 ns                 ;
+; 1.720 ns                                ; vga_sync:inst2|current_v_count[6]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.736 ns                 ;
+; 1.731 ns                                ; vga_sync:inst2|current_h_count[9]                   ; vga_sync:inst2|current_h_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.747 ns                 ;
+; 1.733 ns                                ; vga_sync:inst2|current_h_count[4]                   ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 1.748 ns                 ;
+; 1.741 ns                                ; vga_sync:inst2|current_v_count[0]                   ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.757 ns                 ;
+; 1.745 ns                                ; vga_sync:inst2|current_v_count[1]                   ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.761 ns                 ;
+; 1.750 ns                                ; vga_sync:inst2|current_v_count[6]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.766 ns                 ;
+; 1.761 ns                                ; vga_sync:inst2|current_v_count[5]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.777 ns                 ;
+; 1.762 ns                                ; vga_sync:inst2|current_v_count[5]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.778 ns                 ;
+; 1.763 ns                                ; vga_sync:inst2|current_v_count[1]                   ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.012 ns                   ; 1.775 ns                 ;
+; 1.764 ns                                ; vga_sync:inst2|current_v_count[7]                   ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.012 ns                   ; 1.776 ns                 ;
+; 1.764 ns                                ; vga_sync:inst2|current_v_count[6]                   ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.012 ns                   ; 1.776 ns                 ;
+; 1.768 ns                                ; vga_sync:inst2|current_v_count[4]                   ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.784 ns                 ;
+; 1.812 ns                                ; vga_sync:inst2|current_v_count[0]                   ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.828 ns                 ;
+; 1.816 ns                                ; vga_sync:inst2|current_v_count[1]                   ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.832 ns                 ;
+; 1.830 ns                                ; vga_sync:inst2|current_h_count[5]                   ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.846 ns                 ;
+; 1.839 ns                                ; vga_sync:inst2|current_v_count[4]                   ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.855 ns                 ;
+; 1.850 ns                                ; vga_sync:inst2|current_v_count[2]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.866 ns                 ;
+; 1.855 ns                                ; vga_sync:inst2|current_v_count[5]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.871 ns                 ;
+; 1.887 ns                                ; vga_sync:inst2|current_v_count[1]                   ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.903 ns                 ;
+; 1.908 ns                                ; vga_sync:inst2|current_v_count[3]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.924 ns                 ;
+; 1.928 ns                                ; vga_sync:inst2|current_v_count[9]                   ; vga_sync:inst2|current_v_sync     ; clk        ; clk      ; 0.000 ns                   ; 0.012 ns                   ; 1.940 ns                 ;
+; 1.947 ns                                ; vga_sync:inst2|current_h_count[9]                   ; vga_sync:inst2|current_h_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.015 ns                   ; 1.962 ns                 ;
+; 1.968 ns                                ; vga_sync:inst2|current_v_count[3]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 1.984 ns                 ;
+; 2.132 ns                                ; vga_sync:inst2|current_v_count[9]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 2.148 ns                 ;
+; 2.133 ns                                ; vga_sync:inst2|current_v_count[9]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 2.149 ns                 ;
+; 2.163 ns                                ; vga_sync:inst2|current_v_count[4]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 2.179 ns                 ;
+; 2.164 ns                                ; vga_sync:inst2|current_v_count[4]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 2.180 ns                 ;
+; 2.322 ns                                ; vga_sync:inst2|current_v_count[4]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.016 ns                   ; 2.338 ns                 ;
+; 2.446 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.466 ns                 ;
+; 2.446 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.466 ns                 ;
+; 2.446 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.466 ns                 ;
+; 2.446 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.466 ns                 ;
+; 2.446 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.466 ns                 ;
+; 2.446 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.466 ns                 ;
+; 2.446 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.466 ns                 ;
+; 2.446 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.466 ns                 ;
+; 2.446 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.466 ns                 ;
+; 2.446 ns                                ; vga_sync:inst2|current_h_count[1]                   ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.466 ns                 ;
+; 2.559 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.579 ns                 ;
+; 2.559 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.579 ns                 ;
+; 2.559 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.579 ns                 ;
+; 2.559 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.579 ns                 ;
+; 2.559 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.579 ns                 ;
+; 2.559 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.579 ns                 ;
+; 2.559 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.579 ns                 ;
+; 2.559 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.579 ns                 ;
+; 2.559 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.579 ns                 ;
+; 2.559 ns                                ; vga_sync:inst2|current_h_count[0]                   ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.579 ns                 ;
+; 2.573 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.593 ns                 ;
+; 2.573 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.593 ns                 ;
+; 2.573 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.593 ns                 ;
+; 2.573 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.593 ns                 ;
+; 2.573 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.593 ns                 ;
+; 2.573 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.593 ns                 ;
+; 2.573 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.593 ns                 ;
+; 2.573 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.593 ns                 ;
+; 2.573 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.593 ns                 ;
+; 2.573 ns                                ; vga_sync:inst2|current_h_count[8]                   ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.593 ns                 ;
+; 2.700 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.720 ns                 ;
+; 2.700 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.720 ns                 ;
+; 2.700 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.720 ns                 ;
+; 2.700 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.720 ns                 ;
+; 2.700 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.720 ns                 ;
+; 2.700 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_v_count[3] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.720 ns                 ;
+; 2.700 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_v_count[9] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.720 ns                 ;
+; 2.700 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_v_count[2] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.720 ns                 ;
+; 2.700 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_v_count[0] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.720 ns                 ;
+; 2.700 ns                                ; vga_sync:inst2|current_h_count[3]                   ; vga_sync:inst2|current_v_count[1] ; clk        ; clk      ; 0.000 ns                   ; 0.020 ns                   ; 2.720 ns                 ;
+; 2.701 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_v_count[7] ; clk        ; clk      ; 0.000 ns                   ; 0.021 ns                   ; 2.722 ns                 ;
+; 2.701 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_v_count[6] ; clk        ; clk      ; 0.000 ns                   ; 0.021 ns                   ; 2.722 ns                 ;
+; 2.701 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_v_count[5] ; clk        ; clk      ; 0.000 ns                   ; 0.021 ns                   ; 2.722 ns                 ;
+; 2.701 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_v_count[8] ; clk        ; clk      ; 0.000 ns                   ; 0.021 ns                   ; 2.722 ns                 ;
+; 2.701 ns                                ; vga_sync:inst2|current_mod2                         ; vga_sync:inst2|current_v_count[4] ; clk        ; clk      ; 0.000 ns                   ; 0.021 ns                   ; 2.722 ns                 ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                   ;            ;          ;                            ;                            ;                          ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++--------------------------------------------------------------------------------+
+; tsu                                                                            ;
++-------+--------------+------------+------+--------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                       ; To Clock ;
++-------+--------------+------------+------+--------------------------+----------+
+; N/A   ; None         ; 6.403 ns   ; D    ; Pos_Controler:inst1|y[9] ; Move     ;
+; N/A   ; None         ; 6.332 ns   ; D    ; Pos_Controler:inst1|y[8] ; Move     ;
+; N/A   ; None         ; 6.311 ns   ; D    ; Pos_Controler:inst1|y[2] ; Move     ;
+; N/A   ; None         ; 6.311 ns   ; D    ; Pos_Controler:inst1|y[3] ; Move     ;
+; N/A   ; None         ; 6.311 ns   ; D    ; Pos_Controler:inst1|y[7] ; Move     ;
+; N/A   ; None         ; 6.311 ns   ; D    ; Pos_Controler:inst1|y[5] ; Move     ;
+; N/A   ; None         ; 6.311 ns   ; D    ; Pos_Controler:inst1|y[6] ; Move     ;
+; N/A   ; None         ; 6.311 ns   ; D    ; Pos_Controler:inst1|y[4] ; Move     ;
+; N/A   ; None         ; 6.311 ns   ; D    ; Pos_Controler:inst1|y[1] ; Move     ;
+; N/A   ; None         ; 5.838 ns   ; U    ; Pos_Controler:inst1|y[9] ; Move     ;
+; N/A   ; None         ; 5.838 ns   ; U    ; Pos_Controler:inst1|y[8] ; Move     ;
+; N/A   ; None         ; 5.838 ns   ; U    ; Pos_Controler:inst1|y[2] ; Move     ;
+; N/A   ; None         ; 5.838 ns   ; U    ; Pos_Controler:inst1|y[3] ; Move     ;
+; N/A   ; None         ; 5.838 ns   ; U    ; Pos_Controler:inst1|y[7] ; Move     ;
+; N/A   ; None         ; 5.838 ns   ; U    ; Pos_Controler:inst1|y[5] ; Move     ;
+; N/A   ; None         ; 5.838 ns   ; U    ; Pos_Controler:inst1|y[6] ; Move     ;
+; N/A   ; None         ; 5.838 ns   ; U    ; Pos_Controler:inst1|y[4] ; Move     ;
+; N/A   ; None         ; 5.838 ns   ; U    ; Pos_Controler:inst1|y[1] ; Move     ;
+; N/A   ; None         ; 5.610 ns   ; L    ; Pos_Controler:inst1|x[9] ; Move     ;
+; N/A   ; None         ; 5.610 ns   ; L    ; Pos_Controler:inst1|x[8] ; Move     ;
+; N/A   ; None         ; 5.610 ns   ; L    ; Pos_Controler:inst1|x[5] ; Move     ;
+; N/A   ; None         ; 5.610 ns   ; L    ; Pos_Controler:inst1|x[3] ; Move     ;
+; N/A   ; None         ; 5.610 ns   ; L    ; Pos_Controler:inst1|x[6] ; Move     ;
+; N/A   ; None         ; 5.610 ns   ; L    ; Pos_Controler:inst1|x[2] ; Move     ;
+; N/A   ; None         ; 5.610 ns   ; L    ; Pos_Controler:inst1|x[4] ; Move     ;
+; N/A   ; None         ; 5.610 ns   ; L    ; Pos_Controler:inst1|x[7] ; Move     ;
+; N/A   ; None         ; 5.610 ns   ; L    ; Pos_Controler:inst1|x[1] ; Move     ;
+; N/A   ; None         ; 2.248 ns   ; R    ; Pos_Controler:inst1|x[9] ; Move     ;
+; N/A   ; None         ; 2.153 ns   ; R    ; Pos_Controler:inst1|x[8] ; Move     ;
+; N/A   ; None         ; 2.153 ns   ; R    ; Pos_Controler:inst1|x[5] ; Move     ;
+; N/A   ; None         ; 2.153 ns   ; R    ; Pos_Controler:inst1|x[3] ; Move     ;
+; N/A   ; None         ; 2.153 ns   ; R    ; Pos_Controler:inst1|x[6] ; Move     ;
+; N/A   ; None         ; 2.153 ns   ; R    ; Pos_Controler:inst1|x[2] ; Move     ;
+; N/A   ; None         ; 2.153 ns   ; R    ; Pos_Controler:inst1|x[4] ; Move     ;
+; N/A   ; None         ; 2.153 ns   ; R    ; Pos_Controler:inst1|x[7] ; Move     ;
+; N/A   ; None         ; 2.153 ns   ; R    ; Pos_Controler:inst1|x[1] ; Move     ;
++-------+--------------+------------+------+--------------------------+----------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; tco                                                                                                    ;
++-------+--------------+------------+------------------------------------------+------------+------------+
+; Slack ; Required tco ; Actual tco ; From                                     ; To         ; From Clock ;
++-------+--------------+------------+------------------------------------------+------------+------------+
+; N/A   ; None         ; 13.457 ns  ; Pos_Controler:inst1|x[4]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 13.438 ns  ; Pos_Controler:inst1|x[6]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 13.289 ns  ; Pos_Controler:inst1|x[5]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 13.134 ns  ; Pos_Controler:inst1|x[7]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 13.018 ns  ; Pos_Controler:inst1|x[4]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 13.015 ns  ; vga_sync:inst2|current_v_count[1]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 12.999 ns  ; Pos_Controler:inst1|x[6]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 12.993 ns  ; Pos_Controler:inst1|y[1]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 12.912 ns  ; Pos_Controler:inst1|y[4]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 12.865 ns  ; Pos_Controler:inst1|y[2]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 12.850 ns  ; Pos_Controler:inst1|x[5]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 12.824 ns  ; Pos_Controler:inst1|y[3]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 12.819 ns  ; vga_sync:inst2|current_v_count[2]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 12.755 ns  ; Pos_Controler:inst1|y[6]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 12.748 ns  ; vga_sync:inst2|current_v_count[3]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 12.707 ns  ; Pos_Controler:inst1|x[8]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 12.695 ns  ; Pos_Controler:inst1|x[7]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 12.682 ns  ; vga_sync:inst2|current_h_count[1]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 12.671 ns  ; vga_sync:inst2|current_v_count[4]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 12.622 ns  ; Pos_Controler:inst1|y[5]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 12.609 ns  ; vga_sync:inst2|current_v_count[5]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 12.580 ns  ; Pos_Controler:inst1|y[8]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 12.576 ns  ; vga_sync:inst2|current_v_count[1]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 12.554 ns  ; Pos_Controler:inst1|y[1]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 12.542 ns  ; vga_sync:inst2|current_v_count[6]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 12.522 ns  ; Pos_Controler:inst1|y[7]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 12.510 ns  ; vga_sync:inst2|current_h_count[5]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 12.484 ns  ; vga_sync:inst2|current_v_count[7]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 12.473 ns  ; Pos_Controler:inst1|y[4]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 12.461 ns  ; Pos_Controler:inst1|x[1]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 12.426 ns  ; Pos_Controler:inst1|y[2]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 12.388 ns  ; vga_sync:inst2|current_v_count[8]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 12.385 ns  ; Pos_Controler:inst1|y[3]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 12.380 ns  ; vga_sync:inst2|current_v_count[2]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 12.376 ns  ; Pos_Controler:inst1|x[2]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 12.355 ns  ; Pos_Controler:inst1|x[4]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 12.336 ns  ; Pos_Controler:inst1|x[6]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 12.327 ns  ; vga_sync:inst2|current_h_count[3]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 12.316 ns  ; Pos_Controler:inst1|y[6]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 12.309 ns  ; vga_sync:inst2|current_v_count[3]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 12.268 ns  ; Pos_Controler:inst1|x[8]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 12.265 ns  ; Pos_Controler:inst1|x[3]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 12.243 ns  ; vga_sync:inst2|current_h_count[1]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 12.232 ns  ; vga_sync:inst2|current_v_count[4]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 12.187 ns  ; Pos_Controler:inst1|x[5]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 12.183 ns  ; Pos_Controler:inst1|y[5]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 12.170 ns  ; vga_sync:inst2|current_v_count[5]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 12.143 ns  ; vga_sync:inst2|current_h_count[2]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 12.141 ns  ; Pos_Controler:inst1|y[8]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 12.103 ns  ; vga_sync:inst2|current_v_count[6]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 12.083 ns  ; Pos_Controler:inst1|y[7]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 12.071 ns  ; vga_sync:inst2|current_h_count[5]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 12.065 ns  ; vga_sync:inst2|current_h_count[4]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 12.045 ns  ; vga_sync:inst2|current_v_count[7]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 12.032 ns  ; Pos_Controler:inst1|x[7]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 12.022 ns  ; Pos_Controler:inst1|x[1]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 12.009 ns  ; vga_sync:inst2|current_v_count[9]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 11.949 ns  ; vga_sync:inst2|current_v_count[8]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 11.937 ns  ; Pos_Controler:inst1|x[2]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 11.913 ns  ; vga_sync:inst2|current_v_count[1]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 11.891 ns  ; Pos_Controler:inst1|y[1]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 11.888 ns  ; vga_sync:inst2|current_h_count[3]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 11.883 ns  ; Pos_Controler:inst1|y[9]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 11.874 ns  ; vga_sync:inst2|current_h_count[6]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 11.869 ns  ; vga_sync:inst2|current_h_count[8]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 11.826 ns  ; Pos_Controler:inst1|x[3]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 11.810 ns  ; Pos_Controler:inst1|y[4]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 11.809 ns  ; vga_sync:inst2|current_h_count[7]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 11.780 ns  ; Pos_Controler:inst1|x[9]                 ; VGA_RGB[0] ; Move       ;
+; N/A   ; None         ; 11.763 ns  ; Pos_Controler:inst1|y[2]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 11.722 ns  ; Pos_Controler:inst1|y[3]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 11.717 ns  ; vga_sync:inst2|current_v_count[2]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 11.704 ns  ; vga_sync:inst2|current_h_count[2]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 11.653 ns  ; Pos_Controler:inst1|y[6]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 11.646 ns  ; vga_sync:inst2|current_v_count[3]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 11.626 ns  ; vga_sync:inst2|current_h_count[4]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 11.605 ns  ; Pos_Controler:inst1|x[8]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 11.580 ns  ; vga_sync:inst2|current_h_count[1]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 11.570 ns  ; vga_sync:inst2|current_v_count[9]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 11.569 ns  ; vga_sync:inst2|current_v_count[4]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 11.540 ns  ; vga_sync:inst2|current_h_count[9]        ; VGA_RGB[0] ; clk        ;
+; N/A   ; None         ; 11.520 ns  ; Pos_Controler:inst1|y[5]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 11.507 ns  ; vga_sync:inst2|current_v_count[5]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 11.478 ns  ; Pos_Controler:inst1|y[8]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 11.444 ns  ; Pos_Controler:inst1|y[9]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 11.440 ns  ; vga_sync:inst2|current_v_count[6]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 11.435 ns  ; vga_sync:inst2|current_h_count[6]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 11.430 ns  ; vga_sync:inst2|current_h_count[8]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 11.420 ns  ; Pos_Controler:inst1|y[7]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 11.408 ns  ; vga_sync:inst2|current_h_count[5]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 11.382 ns  ; vga_sync:inst2|current_v_count[7]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 11.370 ns  ; vga_sync:inst2|current_h_count[7]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 11.359 ns  ; Pos_Controler:inst1|x[1]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 11.341 ns  ; Pos_Controler:inst1|x[9]                 ; VGA_RGB[1] ; Move       ;
+; N/A   ; None         ; 11.286 ns  ; vga_sync:inst2|current_v_count[8]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 11.274 ns  ; Pos_Controler:inst1|x[2]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 11.225 ns  ; vga_sync:inst2|current_h_count[3]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 11.163 ns  ; Pos_Controler:inst1|x[3]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 11.101 ns  ; vga_sync:inst2|current_h_count[9]        ; VGA_RGB[1] ; clk        ;
+; N/A   ; None         ; 11.041 ns  ; vga_sync:inst2|current_h_count[2]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 10.963 ns  ; vga_sync:inst2|current_h_count[4]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 10.907 ns  ; vga_sync:inst2|current_v_count[9]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 10.781 ns  ; Pos_Controler:inst1|y[9]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 10.778 ns  ; vga_sync:inst2|current_h_count[9]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 10.772 ns  ; vga_sync:inst2|current_h_count[6]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 10.767 ns  ; vga_sync:inst2|current_h_count[8]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 10.707 ns  ; vga_sync:inst2|current_h_count[7]        ; VGA_RGB[2] ; clk        ;
+; N/A   ; None         ; 10.678 ns  ; Pos_Controler:inst1|x[9]                 ; VGA_RGB[2] ; Move       ;
+; N/A   ; None         ; 9.888 ns   ; vga_sync:inst2|current_h_count[9]        ; VGA_BLANK  ; clk        ;
+; N/A   ; None         ; 9.797 ns   ; vga_sync:inst2|current_v_count[9]        ; VGA_BLANK  ; clk        ;
+; N/A   ; None         ; 9.698 ns   ; vga_sync:inst2|current_v_count[6]        ; VGA_BLANK  ; clk        ;
+; N/A   ; None         ; 9.698 ns   ; vga_sync:inst2|current_v_count[7]        ; VGA_BLANK  ; clk        ;
+; N/A   ; None         ; 9.685 ns   ; vga_sync:inst2|current_h_count[8]        ; VGA_BLANK  ; clk        ;
+; N/A   ; None         ; 9.550 ns   ; vga_sync:inst2|current_h_count[7]        ; VGA_BLANK  ; clk        ;
+; N/A   ; None         ; 9.328 ns   ; vga_sync:inst2|current_v_count[8]        ; VGA_BLANK  ; clk        ;
+; N/A   ; None         ; 9.198 ns   ; vga_sync:inst2|current_v_count[5]        ; VGA_BLANK  ; clk        ;
+; N/A   ; None         ; 8.934 ns   ; vga_sync:inst2|current_v_sync            ; VGA_VS     ; clk        ;
+; N/A   ; None         ; 8.004 ns   ; vga_sync:inst2|current_h_sync            ; VGA_HS     ; clk        ;
+; N/A   ; None         ; 2.937 ns   ; PLL:inst13|altpll:altpll_component|_clk0 ; VGA_CLOCK  ; clk        ;
++-------+--------------+------------+------------------------------------------+------------+------------+
+
+
++--------------------------------------------------------------------------+
+; tpd                                                                      ;
++-------+-------------------+-----------------+---------------+------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From          ; To         ;
++-------+-------------------+-----------------+---------------+------------+
+; N/A   ; None              ; 8.142 ns        ; Color_in[0]   ; VGA_RGB[0] ;
+; N/A   ; None              ; 8.047 ns        ; Background[0] ; VGA_RGB[0] ;
+; N/A   ; None              ; 7.698 ns        ; Color_in[1]   ; VGA_RGB[1] ;
+; N/A   ; None              ; 7.684 ns        ; Background[1] ; VGA_RGB[1] ;
+; N/A   ; None              ; 7.438 ns        ; Color_in[2]   ; VGA_RGB[2] ;
+; N/A   ; None              ; 7.428 ns        ; Background[2] ; VGA_RGB[2] ;
++-------+-------------------+-----------------+---------------+------------+
+
+
++--------------------------------------------------------------------------------------+
+; th                                                                                   ;
++---------------+-------------+-----------+------+--------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To                       ; To Clock ;
++---------------+-------------+-----------+------+--------------------------+----------+
+; N/A           ; None        ; -1.112 ns ; R    ; Pos_Controler:inst1|x[9] ; Move     ;
+; N/A           ; None        ; -1.114 ns ; R    ; Pos_Controler:inst1|x[7] ; Move     ;
+; N/A           ; None        ; -1.120 ns ; R    ; Pos_Controler:inst1|x[5] ; Move     ;
+; N/A           ; None        ; -1.120 ns ; R    ; Pos_Controler:inst1|x[6] ; Move     ;
+; N/A           ; None        ; -1.121 ns ; R    ; Pos_Controler:inst1|x[3] ; Move     ;
+; N/A           ; None        ; -1.121 ns ; R    ; Pos_Controler:inst1|x[2] ; Move     ;
+; N/A           ; None        ; -1.121 ns ; R    ; Pos_Controler:inst1|x[4] ; Move     ;
+; N/A           ; None        ; -1.282 ns ; R    ; Pos_Controler:inst1|x[8] ; Move     ;
+; N/A           ; None        ; -1.923 ns ; R    ; Pos_Controler:inst1|x[1] ; Move     ;
+; N/A           ; None        ; -5.275 ns ; D    ; Pos_Controler:inst1|y[7] ; Move     ;
+; N/A           ; None        ; -5.276 ns ; D    ; Pos_Controler:inst1|y[2] ; Move     ;
+; N/A           ; None        ; -5.276 ns ; D    ; Pos_Controler:inst1|y[3] ; Move     ;
+; N/A           ; None        ; -5.277 ns ; D    ; Pos_Controler:inst1|y[9] ; Move     ;
+; N/A           ; None        ; -5.279 ns ; D    ; Pos_Controler:inst1|y[8] ; Move     ;
+; N/A           ; None        ; -5.280 ns ; D    ; Pos_Controler:inst1|y[5] ; Move     ;
+; N/A           ; None        ; -5.280 ns ; D    ; Pos_Controler:inst1|y[6] ; Move     ;
+; N/A           ; None        ; -5.280 ns ; D    ; Pos_Controler:inst1|y[4] ; Move     ;
+; N/A           ; None        ; -5.380 ns ; L    ; Pos_Controler:inst1|x[9] ; Move     ;
+; N/A           ; None        ; -5.380 ns ; L    ; Pos_Controler:inst1|x[8] ; Move     ;
+; N/A           ; None        ; -5.380 ns ; L    ; Pos_Controler:inst1|x[5] ; Move     ;
+; N/A           ; None        ; -5.380 ns ; L    ; Pos_Controler:inst1|x[3] ; Move     ;
+; N/A           ; None        ; -5.380 ns ; L    ; Pos_Controler:inst1|x[6] ; Move     ;
+; N/A           ; None        ; -5.380 ns ; L    ; Pos_Controler:inst1|x[2] ; Move     ;
+; N/A           ; None        ; -5.380 ns ; L    ; Pos_Controler:inst1|x[4] ; Move     ;
+; N/A           ; None        ; -5.380 ns ; L    ; Pos_Controler:inst1|x[7] ; Move     ;
+; N/A           ; None        ; -5.380 ns ; L    ; Pos_Controler:inst1|x[1] ; Move     ;
+; N/A           ; None        ; -5.608 ns ; U    ; Pos_Controler:inst1|y[9] ; Move     ;
+; N/A           ; None        ; -5.608 ns ; U    ; Pos_Controler:inst1|y[8] ; Move     ;
+; N/A           ; None        ; -5.608 ns ; U    ; Pos_Controler:inst1|y[2] ; Move     ;
+; N/A           ; None        ; -5.608 ns ; U    ; Pos_Controler:inst1|y[3] ; Move     ;
+; N/A           ; None        ; -5.608 ns ; U    ; Pos_Controler:inst1|y[7] ; Move     ;
+; N/A           ; None        ; -5.608 ns ; U    ; Pos_Controler:inst1|y[5] ; Move     ;
+; N/A           ; None        ; -5.608 ns ; U    ; Pos_Controler:inst1|y[6] ; Move     ;
+; N/A           ; None        ; -5.608 ns ; U    ; Pos_Controler:inst1|y[4] ; Move     ;
+; N/A           ; None        ; -5.608 ns ; U    ; Pos_Controler:inst1|y[1] ; Move     ;
+; N/A           ; None        ; -6.081 ns ; D    ; Pos_Controler:inst1|y[1] ; Move     ;
++---------------+-------------+-----------+------+--------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Web Edition
+    Info: Processing started: Thu Nov 20 12:06:32 2014
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Lab7 -c Lab7 --timing_analysis_only
+Warning: Clock latency analysis for PLL offsets is supported for the current device family, but is not enabled
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "Move" is an undefined clock
+Info: Found timing assignments -- calculating delays
+Info: No valid register-to-register data paths exist for clock "PLL:inst13|altpll:altpll_component|_clk0"
+Info: Slack time is 16.734 ns for clock "clk" between source register "vga_sync:inst2|current_h_count[9]" and destination register "vga_sync:inst2|current_v_count[7]"
+    Info: Fmax is 306.18 MHz (period= 3.266 ns)
+    Info: + Largest register to register requirement is 19.790 ns
+        Info: + Setup relationship between source and destination is 20.000 ns
+            Info: + Latch edge is 20.000 ns
+                Info: Clock period of Destination clock "clk" is 20.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Destination register is 1
+            Info: - Launch edge is 0.000 ns
+                Info: Clock period of Source clock "clk" is 20.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Source register is 1
+        Info: + Largest clock skew is 0.004 ns
+            Info: + Shortest clock path from clock "clk" to destination register is 2.665 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clk'
+                Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G2; Fanout = 23; COMB Node = 'clk~clkctrl'
+                Info: 3: + IC(1.011 ns) + CELL(0.537 ns) = 2.665 ns; Loc. = LCFF_X37_Y23_N25; Fanout = 6; REG Node = 'vga_sync:inst2|current_v_count[7]'
+                Info: Total cell delay = 1.536 ns ( 57.64 % )
+                Info: Total interconnect delay = 1.129 ns ( 42.36 % )
+            Info: - Longest clock path from clock "clk" to source register is 2.661 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clk'
+                Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G2; Fanout = 23; COMB Node = 'clk~clkctrl'
+                Info: 3: + IC(1.007 ns) + CELL(0.537 ns) = 2.661 ns; Loc. = LCFF_X38_Y24_N27; Fanout = 6; REG Node = 'vga_sync:inst2|current_h_count[9]'
+                Info: Total cell delay = 1.536 ns ( 57.72 % )
+                Info: Total interconnect delay = 1.125 ns ( 42.28 % )
+        Info: - Micro clock to output delay of source is 0.250 ns
+        Info: - Micro setup delay of destination is -0.036 ns
+    Info: - Longest register to register delay is 3.056 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X38_Y24_N27; Fanout = 6; REG Node = 'vga_sync:inst2|current_h_count[9]'
+        Info: 2: + IC(0.521 ns) + CELL(0.408 ns) = 0.929 ns; Loc. = LCCOMB_X38_Y24_N24; Fanout = 4; COMB Node = 'vga_sync:inst2|Equal0~0'
+        Info: 3: + IC(0.281 ns) + CELL(0.275 ns) = 1.485 ns; Loc. = LCCOMB_X38_Y24_N30; Fanout = 10; COMB Node = 'vga_sync:inst2|process_2~0'
+        Info: 4: + IC(0.911 ns) + CELL(0.660 ns) = 3.056 ns; Loc. = LCFF_X37_Y23_N25; Fanout = 6; REG Node = 'vga_sync:inst2|current_v_count[7]'
+        Info: Total cell delay = 1.343 ns ( 43.95 % )
+        Info: Total interconnect delay = 1.713 ns ( 56.05 % )
+Info: Clock "Move" has Internal fmax of 215.98 MHz between source register "Pos_Controler:inst1|x[2]" and destination register "Pos_Controler:inst1|x[9]" (period= 4.63 ns)
+    Info: + Longest register to register delay is 4.416 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X35_Y24_N3; Fanout = 6; REG Node = 'Pos_Controler:inst1|x[2]'
+        Info: 2: + IC(0.768 ns) + CELL(0.436 ns) = 1.204 ns; Loc. = LCCOMB_X37_Y24_N28; Fanout = 1; COMB Node = 'Pos_Controler:inst1|LessThan3~0'
+        Info: 3: + IC(0.657 ns) + CELL(0.420 ns) = 2.281 ns; Loc. = LCCOMB_X35_Y24_N26; Fanout = 1; COMB Node = 'Pos_Controler:inst1|process_0~0'
+        Info: 4: + IC(0.271 ns) + CELL(0.150 ns) = 2.702 ns; Loc. = LCCOMB_X35_Y24_N28; Fanout = 16; COMB Node = 'Pos_Controler:inst1|process_0~1'
+        Info: 5: + IC(0.313 ns) + CELL(0.393 ns) = 3.408 ns; Loc. = LCCOMB_X35_Y24_N2; Fanout = 2; COMB Node = 'Pos_Controler:inst1|x[2]~12'
+        Info: 6: + IC(0.000 ns) + CELL(0.071 ns) = 3.479 ns; Loc. = LCCOMB_X35_Y24_N4; Fanout = 2; COMB Node = 'Pos_Controler:inst1|x[3]~14'
+        Info: 7: + IC(0.000 ns) + CELL(0.071 ns) = 3.550 ns; Loc. = LCCOMB_X35_Y24_N6; Fanout = 2; COMB Node = 'Pos_Controler:inst1|x[4]~16'
+        Info: 8: + IC(0.000 ns) + CELL(0.071 ns) = 3.621 ns; Loc. = LCCOMB_X35_Y24_N8; Fanout = 2; COMB Node = 'Pos_Controler:inst1|x[5]~18'
+        Info: 9: + IC(0.000 ns) + CELL(0.071 ns) = 3.692 ns; Loc. = LCCOMB_X35_Y24_N10; Fanout = 2; COMB Node = 'Pos_Controler:inst1|x[6]~20'
+        Info: 10: + IC(0.000 ns) + CELL(0.071 ns) = 3.763 ns; Loc. = LCCOMB_X35_Y24_N12; Fanout = 2; COMB Node = 'Pos_Controler:inst1|x[7]~22'
+        Info: 11: + IC(0.000 ns) + CELL(0.159 ns) = 3.922 ns; Loc. = LCCOMB_X35_Y24_N14; Fanout = 1; COMB Node = 'Pos_Controler:inst1|x[8]~24'
+        Info: 12: + IC(0.000 ns) + CELL(0.410 ns) = 4.332 ns; Loc. = LCCOMB_X35_Y24_N16; Fanout = 1; COMB Node = 'Pos_Controler:inst1|x[9]~25'
+        Info: 13: + IC(0.000 ns) + CELL(0.084 ns) = 4.416 ns; Loc. = LCFF_X35_Y24_N17; Fanout = 5; REG Node = 'Pos_Controler:inst1|x[9]'
+        Info: Total cell delay = 2.407 ns ( 54.51 % )
+        Info: Total interconnect delay = 2.009 ns ( 45.49 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "Move" to destination register is 2.629 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_W26; Fanout = 1; CLK Node = 'Move'
+            Info: 2: + IC(0.091 ns) + CELL(0.155 ns) = 1.108 ns; Loc. = CLKDELAYCTRL_G7; Fanout = 1; COMB Node = 'Move~clk_delay_ctrl'
+            Info: 3: + IC(0.000 ns) + CELL(0.000 ns) = 1.108 ns; Loc. = CLKCTRL_G7; Fanout = 18; COMB Node = 'Move~clkctrl'
+            Info: 4: + IC(0.984 ns) + CELL(0.537 ns) = 2.629 ns; Loc. = LCFF_X35_Y24_N17; Fanout = 5; REG Node = 'Pos_Controler:inst1|x[9]'
+            Info: Total cell delay = 1.554 ns ( 59.11 % )
+            Info: Total interconnect delay = 1.075 ns ( 40.89 % )
+        Info: - Longest clock path from clock "Move" to source register is 2.629 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_W26; Fanout = 1; CLK Node = 'Move'
+            Info: 2: + IC(0.091 ns) + CELL(0.155 ns) = 1.108 ns; Loc. = CLKDELAYCTRL_G7; Fanout = 1; COMB Node = 'Move~clk_delay_ctrl'
+            Info: 3: + IC(0.000 ns) + CELL(0.000 ns) = 1.108 ns; Loc. = CLKCTRL_G7; Fanout = 18; COMB Node = 'Move~clkctrl'
+            Info: 4: + IC(0.984 ns) + CELL(0.537 ns) = 2.629 ns; Loc. = LCFF_X35_Y24_N3; Fanout = 6; REG Node = 'Pos_Controler:inst1|x[2]'
+            Info: Total cell delay = 1.554 ns ( 59.11 % )
+            Info: Total interconnect delay = 1.075 ns ( 40.89 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Micro setup delay of destination is -0.036 ns
+Info: Minimum slack time is 391 ps for clock "clk" between source register "vga_sync:inst2|current_mod2" and destination register "vga_sync:inst2|current_mod2"
+    Info: + Shortest register to register delay is 0.407 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X37_Y24_N25; Fanout = 12; REG Node = 'vga_sync:inst2|current_mod2'
+        Info: 2: + IC(0.000 ns) + CELL(0.323 ns) = 0.323 ns; Loc. = LCCOMB_X37_Y24_N24; Fanout = 1; COMB Node = 'vga_sync:inst2|current_mod2~0'
+        Info: 3: + IC(0.000 ns) + CELL(0.084 ns) = 0.407 ns; Loc. = LCFF_X37_Y24_N25; Fanout = 12; REG Node = 'vga_sync:inst2|current_mod2'
+        Info: Total cell delay = 0.407 ns ( 100.00 % )
+    Info: - Smallest register to register requirement is 0.016 ns
+        Info: + Hold relationship between source and destination is 0.000 ns
+            Info: + Latch edge is 0.000 ns
+                Info: Clock period of Destination clock "clk" is 20.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Destination register is 1
+                Info: Multicycle Hold factor for Destination register is 1
+            Info: - Launch edge is 0.000 ns
+                Info: Clock period of Source clock "clk" is 20.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Source register is 1
+                Info: Multicycle Hold factor for Source register is 1
+        Info: + Smallest clock skew is 0.000 ns
+            Info: + Longest clock path from clock "clk" to destination register is 2.660 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clk'
+                Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G2; Fanout = 23; COMB Node = 'clk~clkctrl'
+                Info: 3: + IC(1.006 ns) + CELL(0.537 ns) = 2.660 ns; Loc. = LCFF_X37_Y24_N25; Fanout = 12; REG Node = 'vga_sync:inst2|current_mod2'
+                Info: Total cell delay = 1.536 ns ( 57.74 % )
+                Info: Total interconnect delay = 1.124 ns ( 42.26 % )
+            Info: - Shortest clock path from clock "clk" to source register is 2.660 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 2; CLK Node = 'clk'
+                Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G2; Fanout = 23; COMB Node = 'clk~clkctrl'
+                Info: 3: + IC(1.006 ns) + CELL(0.537 ns) = 2.660 ns; Loc. = LCFF_X37_Y24_N25; Fanout = 12; REG Node = 'vga_sync:inst2|current_mod2'
+                Info: Total cell delay = 1.536 ns ( 57.74 % )
+                Info: Total interconnect delay = 1.124 ns ( 42.26 % )
+        Info: - Micro clock to output delay of source is 0.250 ns
+        Info: + Micro hold delay of destination is 0.266 ns
+Info: tsu for register "Pos_Controler:inst1|y[9]" (data pin = "D", clock pin = "Move") is 6.403 ns
+    Info: + Longest pin to register delay is 9.074 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.842 ns) = 0.842 ns; Loc. = PIN_U3; Fanout = 1; PIN Node = 'D'
+        Info: 2: + IC(6.078 ns) + CELL(0.438 ns) = 7.358 ns; Loc. = LCCOMB_X35_Y23_N30; Fanout = 16; COMB Node = 'Pos_Controler:inst1|process_0~4'
+        Info: 3: + IC(0.315 ns) + CELL(0.393 ns) = 8.066 ns; Loc. = LCCOMB_X35_Y23_N12; Fanout = 2; COMB Node = 'Pos_Controler:inst1|y[2]~12'
+        Info: 4: + IC(0.000 ns) + CELL(0.159 ns) = 8.225 ns; Loc. = LCCOMB_X35_Y23_N14; Fanout = 2; COMB Node = 'Pos_Controler:inst1|y[3]~14'
+        Info: 5: + IC(0.000 ns) + CELL(0.071 ns) = 8.296 ns; Loc. = LCCOMB_X35_Y23_N16; Fanout = 2; COMB Node = 'Pos_Controler:inst1|y[4]~16'
+        Info: 6: + IC(0.000 ns) + CELL(0.071 ns) = 8.367 ns; Loc. = LCCOMB_X35_Y23_N18; Fanout = 2; COMB Node = 'Pos_Controler:inst1|y[5]~18'
+        Info: 7: + IC(0.000 ns) + CELL(0.071 ns) = 8.438 ns; Loc. = LCCOMB_X35_Y23_N20; Fanout = 2; COMB Node = 'Pos_Controler:inst1|y[6]~20'
+        Info: 8: + IC(0.000 ns) + CELL(0.071 ns) = 8.509 ns; Loc. = LCCOMB_X35_Y23_N22; Fanout = 2; COMB Node = 'Pos_Controler:inst1|y[7]~22'
+        Info: 9: + IC(0.000 ns) + CELL(0.071 ns) = 8.580 ns; Loc. = LCCOMB_X35_Y23_N24; Fanout = 1; COMB Node = 'Pos_Controler:inst1|y[8]~24'
+        Info: 10: + IC(0.000 ns) + CELL(0.410 ns) = 8.990 ns; Loc. = LCCOMB_X35_Y23_N26; Fanout = 1; COMB Node = 'Pos_Controler:inst1|y[9]~25'
+        Info: 11: + IC(0.000 ns) + CELL(0.084 ns) = 9.074 ns; Loc. = LCFF_X35_Y23_N27; Fanout = 5; REG Node = 'Pos_Controler:inst1|y[9]'
+        Info: Total cell delay = 2.681 ns ( 29.55 % )
+        Info: Total interconnect delay = 6.393 ns ( 70.45 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "Move" to destination register is 2.635 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_W26; Fanout = 1; CLK Node = 'Move'
+        Info: 2: + IC(0.091 ns) + CELL(0.155 ns) = 1.108 ns; Loc. = CLKDELAYCTRL_G7; Fanout = 1; COMB Node = 'Move~clk_delay_ctrl'
+        Info: 3: + IC(0.000 ns) + CELL(0.000 ns) = 1.108 ns; Loc. = CLKCTRL_G7; Fanout = 18; COMB Node = 'Move~clkctrl'
+        Info: 4: + IC(0.990 ns) + CELL(0.537 ns) = 2.635 ns; Loc. = LCFF_X35_Y23_N27; Fanout = 5; REG Node = 'Pos_Controler:inst1|y[9]'
+        Info: Total cell delay = 1.554 ns ( 58.98 % )
+        Info: Total interconnect delay = 1.081 ns ( 41.02 % )
+Info: tco from clock "Move" to destination pin "VGA_RGB[0]" through register "Pos_Controler:inst1|x[4]" is 13.457 ns
+    Info: + Longest clock path from clock "Move" to source register is 2.629 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_W26; Fanout = 1; CLK Node = 'Move'
+        Info: 2: + IC(0.091 ns) + CELL(0.155 ns) = 1.108 ns; Loc. = CLKDELAYCTRL_G7; Fanout = 1; COMB Node = 'Move~clk_delay_ctrl'
+        Info: 3: + IC(0.000 ns) + CELL(0.000 ns) = 1.108 ns; Loc. = CLKCTRL_G7; Fanout = 18; COMB Node = 'Move~clkctrl'
+        Info: 4: + IC(0.984 ns) + CELL(0.537 ns) = 2.629 ns; Loc. = LCFF_X35_Y24_N7; Fanout = 8; REG Node = 'Pos_Controler:inst1|x[4]'
+        Info: Total cell delay = 1.554 ns ( 59.11 % )
+        Info: Total interconnect delay = 1.075 ns ( 40.89 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 10.578 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X35_Y24_N7; Fanout = 8; REG Node = 'Pos_Controler:inst1|x[4]'
+        Info: 2: + IC(0.736 ns) + CELL(0.393 ns) = 1.129 ns; Loc. = LCCOMB_X36_Y24_N20; Fanout = 2; COMB Node = 'Object:inst6|Add0~1'
+        Info: 3: + IC(0.000 ns) + CELL(0.071 ns) = 1.200 ns; Loc. = LCCOMB_X36_Y24_N22; Fanout = 2; COMB Node = 'Object:inst6|Add0~3'
+        Info: 4: + IC(0.000 ns) + CELL(0.071 ns) = 1.271 ns; Loc. = LCCOMB_X36_Y24_N24; Fanout = 2; COMB Node = 'Object:inst6|Add0~5'
+        Info: 5: + IC(0.000 ns) + CELL(0.410 ns) = 1.681 ns; Loc. = LCCOMB_X36_Y24_N26; Fanout = 1; COMB Node = 'Object:inst6|Add0~6'
+        Info: 6: + IC(0.679 ns) + CELL(0.414 ns) = 2.774 ns; Loc. = LCCOMB_X37_Y24_N20; Fanout = 1; COMB Node = 'Object:inst6|LessThan2~15'
+        Info: 7: + IC(0.000 ns) + CELL(0.410 ns) = 3.184 ns; Loc. = LCCOMB_X37_Y24_N22; Fanout = 1; COMB Node = 'Object:inst6|LessThan2~16'
+        Info: 8: + IC(0.666 ns) + CELL(0.150 ns) = 4.000 ns; Loc. = LCCOMB_X36_Y24_N0; Fanout = 3; COMB Node = 'Mux_RGB:inst|RGB~0'
+        Info: 9: + IC(1.109 ns) + CELL(0.150 ns) = 5.259 ns; Loc. = LCCOMB_X33_Y20_N10; Fanout = 1; COMB Node = 'Mux_RGB:inst|RGB[0]~3'
+        Info: 10: + IC(2.551 ns) + CELL(2.768 ns) = 10.578 ns; Loc. = PIN_E10; Fanout = 0; PIN Node = 'VGA_RGB[0]'
+        Info: Total cell delay = 4.837 ns ( 45.73 % )
+        Info: Total interconnect delay = 5.741 ns ( 54.27 % )
+Info: Longest tpd from source pin "Color_in[0]" to destination pin "VGA_RGB[0]" is 8.142 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_AF14; Fanout = 1; PIN Node = 'Color_in[0]'
+    Info: 2: + IC(1.405 ns) + CELL(0.419 ns) = 2.823 ns; Loc. = LCCOMB_X33_Y20_N10; Fanout = 1; COMB Node = 'Mux_RGB:inst|RGB[0]~3'
+    Info: 3: + IC(2.551 ns) + CELL(2.768 ns) = 8.142 ns; Loc. = PIN_E10; Fanout = 0; PIN Node = 'VGA_RGB[0]'
+    Info: Total cell delay = 4.186 ns ( 51.41 % )
+    Info: Total interconnect delay = 3.956 ns ( 48.59 % )
+Info: th for register "Pos_Controler:inst1|x[9]" (data pin = "R", clock pin = "Move") is -1.112 ns
+    Info: + Longest clock path from clock "Move" to destination register is 2.629 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_W26; Fanout = 1; CLK Node = 'Move'
+        Info: 2: + IC(0.091 ns) + CELL(0.155 ns) = 1.108 ns; Loc. = CLKDELAYCTRL_G7; Fanout = 1; COMB Node = 'Move~clk_delay_ctrl'
+        Info: 3: + IC(0.000 ns) + CELL(0.000 ns) = 1.108 ns; Loc. = CLKCTRL_G7; Fanout = 18; COMB Node = 'Move~clkctrl'
+        Info: 4: + IC(0.984 ns) + CELL(0.537 ns) = 2.629 ns; Loc. = LCFF_X35_Y24_N17; Fanout = 5; REG Node = 'Pos_Controler:inst1|x[9]'
+        Info: Total cell delay = 1.554 ns ( 59.11 % )
+        Info: Total interconnect delay = 1.075 ns ( 40.89 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 4.007 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; PIN Node = 'R'
+        Info: 2: + IC(1.784 ns) + CELL(0.416 ns) = 3.199 ns; Loc. = LCCOMB_X35_Y24_N28; Fanout = 16; COMB Node = 'Pos_Controler:inst1|process_0~1'
+        Info: 3: + IC(0.305 ns) + CELL(0.419 ns) = 3.923 ns; Loc. = LCCOMB_X35_Y24_N16; Fanout = 1; COMB Node = 'Pos_Controler:inst1|x[9]~25'
+        Info: 4: + IC(0.000 ns) + CELL(0.084 ns) = 4.007 ns; Loc. = LCFF_X35_Y24_N17; Fanout = 5; REG Node = 'Pos_Controler:inst1|x[9]'
+        Info: Total cell delay = 1.918 ns ( 47.87 % )
+        Info: Total interconnect delay = 2.089 ns ( 52.13 % )
+Info: All timing requirements were met for slow timing model timing analysis. See Report window for more details.
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 177 megabytes
+    Info: Processing ended: Thu Nov 20 12:06:34 2014
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
+
+

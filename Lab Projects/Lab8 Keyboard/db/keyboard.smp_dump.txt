@@ -1,0 +1,13 @@
+
+State Machine - |keyboard_interface|shift_detector:shft|current_state
+Name current_state.pause current_state.f0 current_state.shft current_state.idle 
+current_state.idle 0 0 0 0 
+current_state.shft 0 0 1 1 
+current_state.f0 0 1 0 1 
+current_state.pause 1 0 0 1 
+
+State Machine - |keyboard_interface|ps2_rec:rec|current_state
+Name current_state.done current_state.receive current_state.idle 
+current_state.idle 0 0 0 
+current_state.receive 0 1 1 
+current_state.done 1 0 1 

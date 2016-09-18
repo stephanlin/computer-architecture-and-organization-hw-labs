@@ -1,0 +1,22 @@
+LIBRARY IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity SRAM is
+	port( Din, CS, WE    : in STD_LOGIC;
+	      Q : out STD_LOGIC );
+end SRAM ;
+
+architecture behav of SRAM  is
+component Positive_Dff is
+		port( D, C    : in STD_LOGIC;
+	      Q, notQ : buffer STD_LOGIC );
+end component;
+
+   signal Clk, Q0 : std_logic;
+     
+begin
+	Clk <= CS and WE;	
+
+	s0: Positive_Dff port map (Din, Clk, Q0);
+	
+end behav;

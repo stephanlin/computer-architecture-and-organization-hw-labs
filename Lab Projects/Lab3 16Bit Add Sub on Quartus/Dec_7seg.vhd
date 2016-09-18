@@ -1,0 +1,287 @@
+LIBRARY IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.all;
+use IEEE.STD_LOGIC_UNSIGNED.all;
+
+entity Dec_7seg is
+  port( sum16 : in std_logic_vector(15 downto 0);
+        inputa: in std_logic_vector(7 downto 0);
+        inputb: in std_logic_vector(7 downto 0);
+        seg_a : out std_logic_vector(7 downto 0);
+        seg_b : out std_logic_vector(7 downto 0);
+        seg_c : out std_logic_vector(7 downto 0);
+        seg_d : out std_logic_vector(7 downto 0);
+        seg_e : out std_logic_vector(7 downto 0);
+        seg_f : out std_logic_vector(7 downto 0);
+        seg_g : out std_logic_vector(7 downto 0));
+        
+end Dec_7seg;
+
+architecture struct of Dec_7seg is
+  signal seg_data1 : std_logic_vector(6 downto 0);
+  signal seg_data2 : std_logic_vector(6 downto 0);
+  signal seg_data3 : std_logic_vector(6 downto 0);
+  signal seg_data4 : std_logic_vector(6 downto 0);
+  signal seg_data5 : std_logic_vector(6 downto 0);
+  signal seg_data6 : std_logic_vector(6 downto 0);
+  signal seg_data7 : std_logic_vector(6 downto 0);
+  signal seg_data8 : std_logic_vector(6 downto 0);
+  
+begin
+  process(sum16(3 downto 0)) is
+    begin
+  case sum16(3 downto 0) is
+  
+  when "0000"=>seg_data1<="1111110";
+  when "0001"=>seg_data1<="0110000";
+  when "0010"=>seg_data1<="1101101";
+  when "0011"=>seg_data1<="1111001";
+  when "0100"=>seg_data1<="0110011";
+  when "0101"=>seg_data1<="1011011";
+  when "0110"=>seg_data1<="1011111";
+  when "0111"=>seg_data1<="1110000";
+  when "1000"=>seg_data1<="1111111";
+  when "1001"=>seg_data1<="1111011";
+  when "1010"=>seg_data1<="1110111";
+  when "1011"=>seg_data1<="0011111";
+  when "1100"=>seg_data1<="0001101";
+  when "1101"=>seg_data1<="0111101";
+  when "1110"=>seg_data1<="1001111";
+  when "1111"=>seg_data1<="1000111";
+  when others=>seg_data1<="0000001";
+end case;
+end process;
+
+  process(sum16(7 downto 4)) is
+    begin
+  case sum16(7 downto 4) is
+  
+  when "0000"=>seg_data2<="1111110";
+  when "0001"=>seg_data2<="0110000";
+  when "0010"=>seg_data2<="1101101";
+  when "0011"=>seg_data2<="1111001";
+  when "0100"=>seg_data2<="0110011";
+  when "0101"=>seg_data2<="1011011";
+  when "0110"=>seg_data2<="1011111";
+  when "0111"=>seg_data2<="1110000";
+  when "1000"=>seg_data2<="1111111";
+  when "1001"=>seg_data2<="1111011";
+  when "1010"=>seg_data2<="1110111";
+  when "1011"=>seg_data2<="0011111";
+  when "1100"=>seg_data2<="0001101";
+  when "1101"=>seg_data2<="0111101";
+  when "1110"=>seg_data2<="1001111";
+  when "1111"=>seg_data2<="1000111";
+  when others=>seg_data2<="0000001";
+end case;
+end process;
+
+  process(sum16(11 downto 8)) is
+    begin
+  case sum16(11 downto 8) is
+  
+  when "0000"=>seg_data3<="1111110";
+  when "0001"=>seg_data3<="0110000";
+  when "0010"=>seg_data3<="1101101";
+  when "0011"=>seg_data3<="1111001";
+  when "0100"=>seg_data3<="0110011";
+  when "0101"=>seg_data3<="1011011";
+  when "0110"=>seg_data3<="1011111";
+  when "0111"=>seg_data3<="1110000";
+  when "1000"=>seg_data3<="1111111";
+  when "1001"=>seg_data3<="1111011";
+  when "1010"=>seg_data3<="1110111";
+  when "1011"=>seg_data3<="0011111";
+  when "1100"=>seg_data3<="0001101";
+  when "1101"=>seg_data3<="0111101";
+  when "1110"=>seg_data3<="1001111";
+  when "1111"=>seg_data3<="1000111";
+  when others=>seg_data3<="0000001";
+end case;
+end process;
+
+  process(sum16(15 downto 12)) is
+    begin
+  case sum16(15 downto 12) is
+  
+  when "0000"=>seg_data4<="1111110";
+  when "0001"=>seg_data4<="0110000";
+  when "0010"=>seg_data4<="1101101";
+  when "0011"=>seg_data4<="1111001";
+  when "0100"=>seg_data4<="0110011";
+  when "0101"=>seg_data4<="1011011";
+  when "0110"=>seg_data4<="1011111";
+  when "0111"=>seg_data4<="1110000";
+  when "1000"=>seg_data4<="1111111";
+  when "1001"=>seg_data4<="1111011";
+  when "1010"=>seg_data4<="1110111";
+  when "1011"=>seg_data4<="0011111";
+  when "1100"=>seg_data4<="0001101";
+  when "1101"=>seg_data4<="0111101";
+  when "1110"=>seg_data4<="1001111";
+  when "1111"=>seg_data4<="1000111";
+  when others=>seg_data4<="0000001";
+end case;
+end process;
+
+
+  
+  process(inputa(3 downto 0)) is
+    begin
+  case inputa(3 downto 0) is
+  
+  when "0000"=>seg_data5<="1111110";
+  when "0001"=>seg_data5<="0110000";
+  when "0010"=>seg_data5<="1101101";
+  when "0011"=>seg_data5<="1111001";
+  when "0100"=>seg_data5<="0110011";
+  when "0101"=>seg_data5<="1011011";
+  when "0110"=>seg_data5<="1011111";
+  when "0111"=>seg_data5<="1110000";
+  when "1000"=>seg_data5<="1111111";
+  when "1001"=>seg_data5<="1111011";
+  when "1010"=>seg_data5<="1110111";
+  when "1011"=>seg_data5<="0011111";
+  when "1100"=>seg_data5<="0001101";
+  when "1101"=>seg_data5<="0111101";
+  when "1110"=>seg_data5<="1001111";
+  when "1111"=>seg_data5<="1000111";
+  when others=>seg_data5<="0000001";
+end case;
+end process;
+
+process(inputa(7 downto 4)) is
+    begin
+  case inputa(7 downto 4) is
+  
+  when "0000"=>seg_data6<="1111110";
+  when "0001"=>seg_data6<="0110000";
+  when "0010"=>seg_data6<="1101101";
+  when "0011"=>seg_data6<="1111001";
+  when "0100"=>seg_data6<="0110011";
+  when "0101"=>seg_data6<="1011011";
+  when "0110"=>seg_data6<="1011111";
+  when "0111"=>seg_data6<="1110000";
+  when "1000"=>seg_data6<="1111111";
+  when "1001"=>seg_data6<="1111011";
+  when "1010"=>seg_data6<="1110111";
+  when "1011"=>seg_data6<="0011111";
+  when "1100"=>seg_data6<="0001101";
+  when "1101"=>seg_data6<="0111101";
+  when "1110"=>seg_data6<="1001111";
+  when "1111"=>seg_data6<="1000111";
+  when others=>seg_data6<="0000001";
+end case;
+end process;
+
+
+process(inputb(3 downto 0)) is
+    begin
+  case inputb(3 downto 0) is
+  
+  when "0000"=>seg_data7<="1111110";
+  when "0001"=>seg_data7<="0110000";
+  when "0010"=>seg_data7<="1101101";
+  when "0011"=>seg_data7<="1111001";
+  when "0100"=>seg_data7<="0110011";
+  when "0101"=>seg_data7<="1011011";
+  when "0110"=>seg_data7<="1011111";
+  when "0111"=>seg_data7<="1110000";
+  when "1000"=>seg_data7<="1111111";
+  when "1001"=>seg_data7<="1111011";
+  when "1010"=>seg_data7<="1110111";
+  when "1011"=>seg_data7<="0011111";
+  when "1100"=>seg_data7<="0001101";
+  when "1101"=>seg_data7<="0111101";
+  when "1110"=>seg_data7<="1001111";
+  when "1111"=>seg_data7<="1000111";
+  when others=>seg_data7<="0000001";
+end case;
+end process;
+
+process(inputb(7 downto 4)) is
+    begin
+  case inputb(7 downto 4) is
+  
+  when "0000"=>seg_data8<="1111110";
+  when "0001"=>seg_data8<="0110000";
+  when "0010"=>seg_data8<="1101101";
+  when "0011"=>seg_data8<="1111001";
+  when "0100"=>seg_data8<="0110011";
+  when "0101"=>seg_data8<="1011011";
+  when "0110"=>seg_data8<="1011111";
+  when "0111"=>seg_data8<="1110000";
+  when "1000"=>seg_data8<="1111111";
+  when "1001"=>seg_data8<="1111011";
+  when "1010"=>seg_data8<="1110111";
+  when "1011"=>seg_data8<="0011111";
+  when "1100"=>seg_data8<="0001101";
+  when "1101"=>seg_data8<="0111101";
+  when "1110"=>seg_data8<="1001111";
+  when "1111"=>seg_data8<="1000111";
+  when others=>seg_data8<="0000001";
+end case;
+end process;
+
+seg_a(7) <= NOT seg_data8(6);
+seg_b(7) <= NOT seg_data8(5);
+seg_c(7) <= NOT seg_data8(4);
+seg_d(7) <= NOT seg_data8(3);
+seg_e(7) <= NOT seg_data8(2);
+seg_f(7) <= NOT seg_data8(1);
+seg_g(7) <= NOT seg_data8(0);
+
+seg_a(6) <= NOT seg_data7(6);
+seg_b(6) <= NOT seg_data7(5);
+seg_c(6) <= NOT seg_data7(4);
+seg_d(6) <= NOT seg_data7(3);
+seg_e(6) <= NOT seg_data7(2);
+seg_f(6) <= NOT seg_data7(1);
+seg_g(6) <= NOT seg_data7(0);
+
+seg_a(5) <= NOT seg_data6(6);
+seg_b(5) <= NOT seg_data6(5);
+seg_c(5) <= NOT seg_data6(4);
+seg_d(5) <= NOT seg_data6(3);
+seg_e(5) <= NOT seg_data6(2);
+seg_f(5) <= NOT seg_data6(1);
+seg_g(5) <= NOT seg_data6(0);
+
+seg_a(4) <= NOT seg_data5(6);
+seg_b(4) <= NOT seg_data5(5);
+seg_c(4) <= NOT seg_data5(4);
+seg_d(4) <= NOT seg_data5(3);
+seg_e(4) <= NOT seg_data5(2);
+seg_f(4) <= NOT seg_data5(1);
+seg_g(4) <= NOT seg_data5(0);
+
+seg_a(3) <= NOT seg_data4(6);
+seg_b(3) <= NOT seg_data4(5);
+seg_c(3) <= NOT seg_data4(4);
+seg_d(3) <= NOT seg_data4(3);
+seg_e(3) <= NOT seg_data4(2);
+seg_f(3) <= NOT seg_data4(1);
+seg_g(3) <= NOT seg_data4(0);
+seg_a(2) <= NOT seg_data3(6);
+seg_b(2) <= NOT seg_data3(5);
+seg_c(2) <= NOT seg_data3(4);
+seg_d(2) <= NOT seg_data3(3);
+seg_e(2) <= NOT seg_data3(2);
+seg_f(2) <= NOT seg_data3(1);
+seg_g(2) <= NOT seg_data3(0);
+seg_a(1) <= NOT seg_data2(6);
+seg_b(1) <= NOT seg_data2(5);
+seg_c(1) <= NOT seg_data2(4);
+seg_d(1) <= NOT seg_data2(3);
+seg_e(1) <= NOT seg_data2(2);
+seg_f(1) <= NOT seg_data2(1);
+seg_g(1) <= NOT seg_data2(0);
+seg_a(0) <= NOT seg_data1(6);
+seg_b(0) <= NOT seg_data1(5);
+seg_c(0) <= NOT seg_data1(4);
+seg_d(0) <= NOT seg_data1(3);
+seg_e(0) <= NOT seg_data1(2);
+seg_f(0) <= NOT seg_data1(1);
+seg_g(0) <= NOT seg_data1(0);
+
+END struct;

@@ -1,0 +1,4 @@
+to, location
+a, PIN_N25
+b, PIN_N26
+output, PIN_AD12

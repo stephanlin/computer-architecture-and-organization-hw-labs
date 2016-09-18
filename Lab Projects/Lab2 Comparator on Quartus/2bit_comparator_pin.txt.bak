@@ -1,0 +1,6 @@
+to, location
+a[0], PIN_N25
+a[1], PIN_N26
+b[0], PIN_p25
+b[1], PIN_AE14
+output, PIN_AD12
