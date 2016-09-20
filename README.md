@@ -1,4 +1,4 @@
-_This repository contains all my homework assignments, takehome exams, labs and lab reports for CSc342&343 Computer Architecture and Organization. I don't mind if you copy from my work only if you learn something from it._
+_This repository contains all my homework assignments, takehome exams, labs and lab reports for CSc342&343 Computer Architecture and Organization at CCNY, Spring 2015. I don't mind if you copy from my work only if you learn something from it._
 ## Homework Assignments
 #### [Overflow](/Homeworks/CSc342_Weifan_Lin_HW_Overflow.pdf)
 #### [Local Variables](/Homeworks/CSc342_Weifan_Lin_HW_LocalVariables.pdf)
